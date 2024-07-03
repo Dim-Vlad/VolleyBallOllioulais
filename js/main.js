@@ -22,3 +22,25 @@ function loadHTML(file, elementId) {
       console.error('There has been a problem with your fetch operation:', error);
     });
 }
+
+/* Cartes galerie */
+let items = document.querySelectorAll('.item');
+console.log(items);
+items.forEach(item => {
+  item.addEventListener('mousemove', (e) => {
+      // Utilisation correcte de l'objet événement 'e'
+      let positionPx = e.x - item.getBoundingClientRect().left;
+      let positionX = (positionPx / item.offsetWidth) * 100;
+
+      let positionPy = e.y - item.getBoundingClientRect().top;
+      let positionY = (positionPy / item.offsetHeight) * 100;
+
+      item.style.setProperty('--rX', (0.5) * (50 - positionY) + 'deg');
+      item.style.setProperty('--rY', -(0.5) * (50 - positionX) + 'deg');
+  });
+
+  item.addEventListener('mouseout', () => {
+      item.style.setProperty('--rX', '0deg');
+      item.style.setProperty('--rY', '0deg');
+  });
+});
