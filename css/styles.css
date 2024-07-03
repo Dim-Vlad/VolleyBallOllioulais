@@ -5,125 +5,152 @@ body {
   padding: 0;
   background-color: #f8f9fa;
   text-align: center;
+  background-image: url('/images/ImageBackGround.jpg'); /* Remplacez par le chemin de votre image */
+  background-size: cover; /* Assure que l'image couvre toute la surface */
+  background-position: center; /* Centre l'image */
+  background-attachment: fixed; /* Rend l'image de fond fixe */
+  background-repeat: no-repeat; /* Évite que l'image se répète */
 }
 
 /* Styles pour le menu */
 .navbar {
-  background-color: #063E0B;
-  color: #ACC2AB;
+  background-color: #063E0B; /* Couleur de fond du menu */
+  color: #ACC2AB; /* Couleur du texte dans le menu */
   padding: 10px;
-  position: fixed;
+  position: fixed; /* Fixe le menu en haut de la page */
   top: 0;
-  width: 100%;
-  z-index: 1000;
+  left: 0; /* Assure que le menu commence au bord gauche de la fenêtre */
+  width: 100%; /* Le menu occupe toute la largeur de l'écran */
+  z-index: 1000; /* Assure que le menu est au-dessus des autres éléments */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre sous le menu pour un effet de profondeur */
 }
 
+/* Conteneur du menu */
 .navbar-container-menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Espace entre la marque et les liens du menu */
   align-items: center;
+  max-width: 1200px; /* Largeur maximale du menu */
+  margin: 0 auto; /* Centre le conteneur horizontalement */
+  padding: 0 20px; /* Ajoute un peu de marge intérieure */
 }
 
+/* Marque du menu */
 .navbar-brand {
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-  font-family: 'Merriweather', serif;
+  color: white; /* Couleur du texte de la marque */
+  text-decoration: none; /* Supprime le soulignement des liens */
+  font-size: 1.5rem; /* Taille du texte de la marque */
+  font-weight: bold; /* Gras pour le texte de la marque */
+  font-family: 'Merriweather', serif; /* Police de caractères pour la marque */
 }
 
+/* Style du menu burger */
 .navbar-toggler {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: none; /* Hide by default */
+  background: none; /* Aucune couleur de fond pour le bouton burger */
+  border: none; /* Supprime la bordure du bouton burger */
+  color: white; /* Couleur du texte du bouton burger */
+  font-size: 1.5rem; /* Taille du texte du bouton burger */
+  cursor: pointer; /* Changement du curseur au survol */
+  display: none; /* Cache le bouton burger par défaut sur les grands écrans */
+  position: relative; /* Permet de positionner le bouton burger avec `margin` */
+  margin-left: auto; /* Pousse le bouton burger vers la droite */
+  margin-right: 20px; /* Ajoute une marge à droite du bouton burger */
 }
 
+/* Style des liens du menu */
 .navbar-links {
-  display: flex;
-  gap: 15px;
-  margin-right: 20px; /* Add right margin */
+  display: flex; /* Affiche les liens en ligne */
+  gap: 15px; /* Espace entre les liens */
+  margin-right: 30px; /* Ajoute une marge à droite des liens du menu */
 }
 
+/* Masque les liens du menu burger par défaut */
 .navbar-links a {
-  color: #ACC2AB;
-  text-decoration: none;
-  padding: 12px 16px;
-  font-family: 'Open Sans', sans-serif;
+  color: #ACC2AB; /* Couleur des liens du menu */
+  text-decoration: none; /* Supprime le soulignement des liens */
+  padding: 12px 16px; /* Espace intérieur des liens */
+  font-family: 'Open Sans', sans-serif; /* Police de caractères pour les liens */
 }
 
+/* Effet au survol des liens du menu */
 .navbar-links a:hover {
-  background-color: white;
-  color: #063E0B; /* Change text color on hover */
+  background-color: white; /* Couleur de fond au survol */
+  color: #063E0B; /* Couleur du texte au survol */
 }
 
+/* Style des éléments du menu déroulant */
 .dropdown {
-  position: relative;
+  position: relative; /* Positionner les éléments enfants par rapport à ce conteneur */
 }
 
 .dropbtn {
-  background: none;
-  border: none;
-  color: #ACC2AB;
-  padding: 12px 16px;
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  background: none; /* Aucune couleur de fond pour le bouton du menu déroulant */
+  border: none; /* Supprime la bordure du bouton */
+  color: #ACC2AB; /* Couleur du texte du bouton du menu déroulant */
+  padding: 12px 16px; /* Espace intérieur du bouton */
+  cursor: pointer; /* Changement du curseur au survol */
+  font-family: 'Open Sans', sans-serif; /* Police de caractères pour le bouton */
 }
 
+/* Style du menu déroulant */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #063E0B;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  display: none; /* Cache le menu déroulant par défaut */
+  position: absolute; /* Positionne le menu déroulant par rapport au parent */
+  background-color: #063E0B; /* Couleur de fond du menu déroulant */
+  min-width: 160px; /* Largeur minimale du menu déroulant */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Ombre sous le menu déroulant */
+  z-index: 1; /* Assure que le menu est au-dessus des autres éléments */
 }
 
+/* Style des liens dans le menu déroulant */
 .dropdown-content a {
-  color: #ACC2AB;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-family: 'Open Sans', sans-serif;
+  color: #ACC2AB; /* Couleur du texte des liens dans le menu déroulant */
+  padding: 12px 16px; /* Espace intérieur des liens */
+  text-decoration: none; /* Supprime le soulignement des liens */
+  display: block; /* Les liens s'affichent en bloc */
+  font-family: 'Open Sans', sans-serif; /* Police de caractères pour les liens */
 }
 
+/* Effet au survol des liens du menu déroulant */
 .dropdown-content a:hover {
-  background-color: white;
-  color: #063E0B; /* Change text color on hover */
+  background-color: white; /* Couleur de fond au survol */
+  color: #063E0B; /* Couleur du texte au survol */
 }
 
+/* Affiche le menu déroulant quand le bouton est survolé */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Responsive styles */
+/* Styles Responsifs */
 @media (max-width: 768px) {
   .navbar-toggler {
-    display: block;
+    display: block; /* Affiche le bouton burger sur les petits écrans */
   }
 
   .navbar-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    margin-right: 0; /* Remove right margin on small screens */
+    display: none; /* Masque les liens du menu par défaut sur les petits écrans */
+    flex-direction: column; /* Aligne les liens en colonne */
+    width: 100%; /* Prend toute la largeur de l'écran */
+    text-align: center; /* Centre les textes des liens */
+    margin-right: 0; /* Supprime la marge droite */
   }
 
+  /* Affiche les liens du menu quand la classe 'show' est ajoutée */
   .navbar-links.show {
     display: flex;
   }
 
   .navbar-links a {
-    margin: 10px 0;
+    margin: 10px 0; /* Espace entre les liens en mode burger */
   }
 
+  /* Positionne le menu déroulant en mode burger */
   .dropdown-content {
     position: static;
   }
 }
+
 
 /* Styles pour le footer */
 .footer {

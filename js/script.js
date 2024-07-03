@@ -1,30 +1,12 @@
-emailjs.init("PUBLIC_KEY"); // Replace with your EmailJS User ID
+// Fonction pour basculer le menu burger
+function toggleMenu() {
+    const navbarLinks = document.getElementById('navbarLinks');
+    navbarLinks.classList.toggle('show'); // Ajoute ou supprime la classe 'show' pour afficher/cacher les liens
+  }
 
-const sendBtn = document.querySelector('.send-btn');
-const result = document.querySelector('.result');
+  // Ajoute un écouteur d'événements sur le bouton burger
+  document.querySelector('.navbar-toggler').addEventListener('click', toggleMenu);
 
-sendBtn.addEventListener('click', sendEmail);
-
-function sendEmail() {
-    // Get the form data
-    const to = document.getElementById("to").value;
-    const subject = document.getElementById("subject").value;
-    const message = document.getElementById("message").value;
-
-    // Send the email using EmailJS
-    emailjs.send("SERVICE_ID", "TEMPLATE_ID", {
-        to_email: to,
-        subject: subject,
-        message: message
-    })
-        .then(function () {
-            result.innerHTML = "Email sent successfully!";
-            result.style.opacity = 1;
-        }, function (error) {
-            result.innerHTML = "Email sending failed!";
-            result.style.opacity = 1;
-        });
-}
 
 /* Cartes galerie */
 let items = document.querySelectorAll('.item');
