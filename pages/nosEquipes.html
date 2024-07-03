@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos équipes - VBO</title>
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="menu"></div>
+    <div id="content">
+        <!-- Contenu de la galerie ici -->
+        <h1>Nos équipes</h1>
+        <p>Toutes les équipes du VBO.</p>
+    </div>
+
+    <section class="main">
+        <div class="wrap" onclick="openModal('Info', 'Entraîneur: Jack Daniel', 'https://www.ffvbbeach.org/ffvbapp/resu/seniors/2022-2023/index_3mb.htm', '/images/ImageMatch.jpg')">
+            <div class="item">
+                <p>Nationale 3 masculine</p>
+                <img src="/images/ImageEntrainement.jpg" alt="">                                
+            </div>
+        </div>
+
+        <div class="wrap" onclick="openModal('Info', 'Entraîneur: Jack Daniel', 'https://www.ffvbbeach.org/ffvbapp/resu/seniors/2022-2023/index_3mb.htm', '/images/ImageMatch.jpg')">
+            <div class="item">
+                <p>TEAM 1</p>
+                <img src="/images/ImageEntrainement.jpg" alt="">                                
+            </div>
+        </div>
+
+        <div class="wrap" onclick="openModal('Info', 'Entraîneur: Jack Daniel', 'https://www.ffvbbeach.org/ffvbapp/resu/seniors/2022-2023/index_3mb.htm', '/images/ImageMatch.jpg')">
+            <div class="item">
+                <p>TEAM 2</p>
+                <img src="/images/ImageEntrainement.jpg" alt="">                                
+            </div>
+        </div>
+
+        <div class="wrap" onclick="openModal('Info', 'Entraîneur: Jack Daniel', 'https://www.ffvbbeach.org/ffvbapp/resu/seniors/2022-2023/index_3mb.htm', '/images/ImageMatch.jpg')">
+            <div class="item">
+                <p>TEAM 3</p>
+                <img src="/images/ImageEntrainement.jpg" alt="">                                
+            </div>
+        </div>
+
+        <div class="wrap" onclick="openModal('Info', 'Entraîneur: Jack Daniel', 'https://www.ffvbbeach.org/ffvbapp/resu/seniors/2022-2023/index_3mb.htm', '/images/ImageMatch.jpg')">
+            <div class="item">
+                <p>TEAM 4</p>
+                <img src="/images/ImageEntrainement.jpg" alt="">                                
+            </div>
+        </div>
+
+        <div class="wrap" onclick="openModal('Info', 'Entraîneur: Jack Daniel', 'https://www.ffvbbeach.org/ffvbapp/resu/seniors/2022-2023/index_3mb.htm', '/images/ImageMatch.jpg')">
+            <div class="item">
+                <p>TEAM 5</p>
+                <img src="/images/ImageEntrainement.jpg" alt="">                                
+            </div>
+        </div>
+
+        <div class="wrap" onclick="openModal('Info', 'Entraîneur: Jack Daniel', 'https://www.ffvbbeach.org/ffvbapp/resu/seniors/2022-2023/index_3mb.htm', '/images/ImageMatch.jpg')">
+            <div class="item">
+                <p>TEAM 6</p>
+                <img src="/images/ImageEntrainement.jpg" alt="">                                
+            </div>
+        </div>
+
+        <div class="wrap" onclick="openModal('Info', 'Entraîneur: Jack Daniel', 'https://www.ffvbbeach.org/ffvbapp/resu/seniors/2022-2023/index_3mb.htm', '/images/ImageMatch.jpg')">
+            <div class="item">
+                <p>TEAM 7</p>
+                <img src="/images/ImageEntrainement.jpg" alt="">                                
+            </div>
+        </div>
+
+        <div class="wrap" onclick="openModal('Info', 'Entraîneur: Jack Daniel', 'https://www.ffvbbeach.org/ffvbapp/resu/seniors/2022-2023/index_3mb.htm', '/images/ImageMatch.jpg')">
+            <div class="item">
+                <p>TEAM 8</p>
+                <img src="/images/ImageEntrainement.jpg" alt="">                                
+            </div>
+        </div>
+
+        <div class="wrap" onclick="openModal('Info', 'Entraîneur: Jack Daniel', 'https://www.ffvbbeach.org/ffvbapp/resu/seniors/2022-2023/index_3mb.htm', '/images/ImageMatch.jpg')">
+            <div class="item">
+                <p>TEAM 9</p>
+                <img src="/images/ImageEntrainement.jpg" alt="">                                
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+
+        
+
+<!-- Modale -->
+<div id="infoModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title"></h2>
+        <img id="modal-image" src="" alt="" style="width: 100%; border-radius: 10px;">
+        <p id="modal-body"></p>
+        <a id="modal-link" href="" target="_blank">Lien vers FFVB</a><br>
+        <p></p>
+        <a id="contact-link" href="/pages/nousContacter.html">Nous contacter</a>
+    </div>
+</div>
+
+<script src="/js/main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        loadHTML('/commun/menu.html', 'menu');
+        loadHTML('/commun/footer.html', 'footer');
+    });
+
+    function openModal(name, info, link, imgSrc) {
+        document.getElementById('modal-title').textContent = name;
+        document.getElementById('modal-body').textContent = info;
+        document.getElementById('modal-link').href = link;
+        document.getElementById('modal-image').src = imgSrc;
+        document.getElementById('infoModal').style.display = 'block';
+    }
+
+    function closeModal(event) {
+        if (event.target.classList.contains('modal')) {
+            document.getElementById('infoModal').style.display = 'none';
+        } else {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+    }
+</script>
+</body>
+</html>
