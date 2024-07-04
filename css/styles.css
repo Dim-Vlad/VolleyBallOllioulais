@@ -14,7 +14,7 @@ body {
 
 /* Styles pour le menu */
 .navbar {
-  background-color: #063E0B; /* Couleur de fond du menu */
+  background-color: #ACC2AB; /* Couleur de fond du menu */
   color: #ACC2AB; /* Couleur du texte dans le menu */
   padding: 10px;
   position: fixed; /* Fixe le menu en haut de la page */
@@ -66,7 +66,7 @@ body {
 
 /* Masque les liens du menu burger par défaut */
 .navbar-links a {
-  color: #ACC2AB; /* Couleur des liens du menu */
+  color: #063E0B; /* Couleur des liens du menu */
   text-decoration: none; /* Supprime le soulignement des liens */
   padding: 12px 16px; /* Espace intérieur des liens */
   font-family: 'Open Sans', sans-serif; /* Police de caractères pour les liens */
@@ -76,6 +76,8 @@ body {
 .navbar-links a:hover {
   background-color: white; /* Couleur de fond au survol */
   color: #063E0B; /* Couleur du texte au survol */
+  border-radius: 20px;
+  
 }
 
 /* Style des éléments du menu déroulant */
@@ -86,25 +88,26 @@ body {
 .dropbtn {
   background: none; /* Aucune couleur de fond pour le bouton du menu déroulant */
   border: none; /* Supprime la bordure du bouton */
-  color: #ACC2AB; /* Couleur du texte du bouton du menu déroulant */
+  color: #063E0B; /* Couleur du texte du bouton du menu déroulant */
   padding: 12px 16px; /* Espace intérieur du bouton */
   cursor: pointer; /* Changement du curseur au survol */
-  font-family: 'Open Sans', sans-serif; /* Police de caractères pour le bouton */
+  font-family: 'Open Sans', sans-serif; /* Police de caractères pour le bouton */  
 }
 
 /* Style du menu déroulant */
 .dropdown-content {
   display: none; /* Cache le menu déroulant par défaut */
   position: absolute; /* Positionne le menu déroulant par rapport au parent */
-  background-color: #063E0B; /* Couleur de fond du menu déroulant */
+  background-color: #ACC2AB; /* Couleur de fond du menu déroulant */
   min-width: 160px; /* Largeur minimale du menu déroulant */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Ombre sous le menu déroulant */
   z-index: 1; /* Assure que le menu est au-dessus des autres éléments */
+  border-radius: 20px;
 }
 
 /* Style des liens dans le menu déroulant */
 .dropdown-content a {
-  color: #ACC2AB; /* Couleur du texte des liens dans le menu déroulant */
+  color: #063E0B; /* Couleur du texte des liens dans le menu déroulant */
   padding: 12px 16px; /* Espace intérieur des liens */
   text-decoration: none; /* Supprime le soulignement des liens */
   display: block; /* Les liens s'affichent en bloc */
@@ -154,8 +157,8 @@ body {
 
 /* Styles pour le footer */
 .footer {
-  background-color: #063E0B;
-  color: #ACC2AB;
+  background-color: #ACC2AB;
+  color: #063E0B;
   text-align: center;
   padding: 20px 0;
   width: 100%;
@@ -179,7 +182,7 @@ body {
 }
 
 .liens p a {
-  color: #ACC2AB;
+  color: #063E0B;
   text-decoration: none;
 }
 
@@ -206,8 +209,8 @@ body {
 
 .footer-copyright {
   text-align: center;
-  padding-top: 10px;
-  border-top: 1px solid #ACC2AB;
+  padding-top: 5px;
+  border-top: 1px solid #063E0B;
 }
 
 /* Responsive Styles */
@@ -243,7 +246,7 @@ body {
   }
   .navbar-links a {
     padding: 10px;
-    border-top: 1px solid #ACC2AB;
+    border-top: 1px solid #063E0B;
   }
   .navbar-links a:first-child {
     border-top: none;
@@ -428,7 +431,7 @@ label {
 input[type=submit] {
   margin-top: 10px;
   background-color: #85B683;
-  color: white;
+  color: #063E0B;
   font-weight: bold;
   padding: 12px 20px;
   border: none;
@@ -438,7 +441,8 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #063E0B;
+  background-color: #ACC2AB;
+  color: white;
 }
 
 .form-container {
