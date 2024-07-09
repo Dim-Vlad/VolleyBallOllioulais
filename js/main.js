@@ -23,7 +23,7 @@ function loadHTML(file, elementId) {
     });
 }
 
-/* Cartes galerie */
+/* Carte NOS EQUIPES */
 let items = document.querySelectorAll('.item');
 console.log(items);
 items.forEach(item => {
@@ -44,3 +44,6 @@ items.forEach(item => {
       item.style.setProperty('--rY', '0deg');
   });
 });
+
+
+/* Cartes galerie */

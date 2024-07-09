@@ -35,13 +35,21 @@ body {
   padding: 0 20px; /* Ajoute un peu de marge intérieure */
 }
 
+.navbar-logo {
+  height: 60px; /* Ajustez la hauteur selon vos besoins */
+  margin-right: 20px; /* Espace entre le logo et le texte */
+}
+
 /* Marque du menu */
 .navbar-brand {
+  display: flex; /* Affiche le logo et le texte en ligne */
+  align-items: center; /* Centre verticalement le logo et le texte */
   color: white; /* Couleur du texte de la marque */
   text-decoration: none; /* Supprime le soulignement des liens */
   font-size: 1.5rem; /* Taille du texte de la marque */
   font-weight: bold; /* Gras pour le texte de la marque */
   font-family: 'Merriweather', serif; /* Police de caractères pour la marque */
+  margin-left: 0; /* Ajustez cette valeur pour déplacer le logo plus à gauche */
 }
 
 /* Style du menu burger */
@@ -258,11 +266,6 @@ body {
 
 
 /* Style cartes Nos équipes */
-.body-carteGalerie {
-  background-color: #ACC2AB;
-  margin: 0;
-  font-family: 'Merriweather', serif;
-}
 
 .main {
   display: grid;
@@ -308,7 +311,6 @@ body {
 }
 
 .wrap {
-  /*background-color: #063E0B;*/
   border-radius: 20px;
   cursor: pointer;
   padding: 20px;
@@ -341,7 +343,6 @@ body {
   height: 200px;
   object-fit: cover;
   border-radius: 20px;
-  /*box-shadow: 0 15px 10px #5559;*/
   z-index: -1;
 }
 
@@ -394,14 +395,6 @@ padding-top: 20px;
   font-family: 'Merriweather', serif;
 }
 
-/* Appliquez les styles Flexbox à l'élément parent */
-body formulaire-contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-}
 
 /************ BEGIN CONTENT CONTAINER  ***************/
 .content-container {
@@ -484,7 +477,8 @@ input[type=submit]:hover {
 
 
 
-/* REMARQUE */
+/* Cards Pagination GALLARIE */
+
 
 /* REMARQUE */
 
