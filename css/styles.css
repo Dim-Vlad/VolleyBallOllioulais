@@ -12,6 +12,36 @@ body {
   background-repeat: no-repeat; /* Évite que l'image se répète */
 }
 
+/* Logo VBO*/
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Ajoute un peu de padding autour du contenu pour espacer du bord */
+}
+
+.club-logo {
+  width: 200px; /* Ajustez la taille du logo selon vos besoins */
+  height: auto; /* Gardez les proportions du logo */
+  margin-right: 0px; /* Espace entre le logo et le texte */
+  margin-top: 50px;
+  margin-left: 70px;
+}
+
+.text-content {
+  flex: 1; /* Prend l'espace restant à côté du logo */
+}
+
+.text-content h1 {
+  margin: 0; /* Enlevez la marge par défaut du titre pour un meilleur alignement */
+  line-height: 2; /* Ajuste l'espacement entre les lignes du titre */
+}
+
+.text-content p {
+  margin-top: 10px; /* Ajustez la marge supérieure du paragraphe */
+  line-height: 1.6; /* Ajuste l'espacement entre les lignes du paragraphe */
+}
+
 /* Styles pour le menu */
 .navbar {
   background-color: #ACC2AB; /* Couleur de fond du menu */
@@ -476,8 +506,7 @@ input[type=submit]:hover {
 }
 
 
-
-/* Cards Pagination GALLARIE */
+/* Bureau images des membres */
 
 
 /* REMARQUE */
