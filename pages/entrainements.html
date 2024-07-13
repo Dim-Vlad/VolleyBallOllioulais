@@ -7,6 +7,103 @@
     <link href="/css/styles.css" rel="stylesheet">
     <link rel="icon" href="/images/favicon-36x36.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 90%;
+            margin: 20px auto;
+        }
+        .training-table {
+            width: 60%;
+            max-width: 800px;
+            margin: 20px;
+            border-collapse: collapse;
+        }
+        .training-table th, .training-table td {
+            border: 1px solid;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .training-table th { /* En-tête du tableau */
+            background-color: #c9c9c9;
+            font-weight: bold;
+        }
+        .training-table tr:nth-child(even) { 
+            background-color: #f9f9f9; /* Couleur de fond une ligne sur deux */
+        }
+        .training-table tr:hover td:not(.no-hover) {
+            background-color: #85B683; /* Couleur de fond ligne en survol */
+        }
+        .training-table tr:hover .day {
+            color: #fff;
+        }
+        .training-table .day {
+            font-weight: bold;
+        }
+        /* Formulaire connaitre catégorie */
+        .form-container {
+            width: 35%;
+            max-width: 400px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #85B683;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #063E0B;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #b90000;
+            font-weight: bold;
+        }
+        .contact-button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .contact-button:hover {
+            background-color: #D64D4D;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,18 +113,241 @@
             <img src="/images/LogoVBO.png" alt="Logo du club" class="club-logo">
             <div class="text-content">
                 <h1>Planning des entrainements</h1>
-                <p>En fonction de l'année de naissance, vous pouvez connaitre les jours et horaires des entrainements.</p>
+                <p>En fonction de l'année de naissance et du genre (féminin ou masculin), </br>
+                    vous pouvez connaitre les jours et horaires des entrainements.</p>
             </div>
         </div>
     </div>
 
+    <div class="container">
+        <table class="training-table">
+            <thead>
+                <th colspan="5">Saison 2024 - 2025</th>
+                <tr>                        
+                    <th>Jour</th>
+                    <th>Horaire</th>
+                    <th>Terrain 1</th>
+                    <th>Terrain 2</th>
+                    <th>Terrain 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="day" rowspan="2">Lundi </br>La Cordeille</td>
+                    <td>18h00 - 19h30</td>
+                    <td>M13 Masculin</td>
+                    <td>.</td>
+                    <td>M15 Féminin</br>Nicolas P.</td>
+                </tr>
+                <tr>
+                    <td>19h30 - 21h30</td>
+                    <td colspan="2">Loisirs</br>Florence</td>
+                    <td>Match Compet Lib</br>Matthieu</td>
+                </tr>
+                <tr>
+                    <td class="day" rowspan="3">Mardi</td>
+                    <td>17h30 - 18h45</td>
+                    <td>M18 Masculin</br>???</td>
+                    <td>.</br></td>
+                    <td>M15 Masculin</br>Gil</td>
+                </tr>
+                <tr>
+                    <td>18h45 - 20h15</td>
+                    <td>M21 Masculin</br>Adrien N.</td>
+                    <td>.</br></td>
+                    <td>N3 Masculin</br>Sémi et Cléa</td>
+                </tr>
+                <tr>
+                    <td>20h15 - 22h15</td>
+                    <td colspan="3">Pré-Nationale Féminin</br>???</td>
+                </tr>
+                <tr>
+                    <td class="day" rowspan="5">Mercredi</td>
+                    <td>16h30 - 17h30</td>
+                    <td colspan="3">BABY - Tatami en haut</br>???</td>
+                </tr>
+                <tr>    
+                    <td>17h30 - 18h45</td>
+                    <td>M7 et M9</br>Damaris</td>
+                    <td>M11 Féminin et Masculin</br>Max</td>
+                    <td>M13 Féminin</br>Fabrice</td>
+                </tr>
+                <tr>
+                    <td>18h45 - 20h15</td>
+                    <td>Départementale Féminin</br>???</td>
+                    <td>M18 Féminin</br>Max</td>
+                    <td>M18 F Débutante</br>Fabrice</td>
+                </tr>
+                <tr>
+                    <td>20h15 - 22h15</td>
+                    <td>Départ Masculin</br>???</td>
+                    <td>.</br></td>
+                    <td>Pré-Nationale Masculin</br>Dimitri</td>
+                </tr>
+                <tr>
+                    <td>20h00 - 21h30</br>Gymnase Vallon</td>
+                    <td colspan="3">Loisirs</br>Florence et Matthieu</td>
+                </tr>
+                <tr>
+                    <td class="day" rowspan="3">Jeudi</td>
+                    <td>17h30 - 18h45</td>
+                    <td>M13 Masculin</br>???</td>
+                    <td>M15 Masculin</br>Gil</td>
+                    <td>M15 Féminin</br>Nicolas P.</td>
+                </tr>
+                <tr>
+                    <td>18h45 - 20h15</td>
+                    <td>M18 Masculin</br>???</td>
+                    <td>M21 Masculin</br>Adrien N.</td>
+                    <td>Pré-Nationale Fémin</br>???</td>
+                </tr>
+                <tr>
+                    <td>20h15 - 22h15</td>
+                    <td colspan="3">N3 Masculin</br>Sémi et Cléa</td>
+                </tr>
+                <tr>
+                    <td class="day" rowspan="3">Vendredi</td>
+                    <td>17h30 - 18h45</td>
+                    <td>M11 Féminin et Masculin</br>Max</td>
+                    <td>.</br></td>
+                    <td>M13 Féminin</br>Fabrice</td>
+                </tr>
+                <tr>
+                    <td>18h45 - 20h15</td>
+                    <td>Départementale Féminin</br>???</td>
+                    <td>M18 Féminin</br>Max</td>
+                    <td>M18 F Débutante</br>Fabrice</td>
+                </tr>
+                <tr>
+                    <td>20h15 - 22h15</td>
+                    <td>Départ Masculin</br>???</td>
+                    <td>.</br></td>
+                    <td>Pré-Nationale Masculin</br>Dimitri</td>
+                </tr>                
+            </tbody>
+        </table>
+
+        <div class="form-container">
+            <h2>Déterminer la Catégorie</h2>
+            <form id="category-form">
+                <label for="birth-year">Année de Naissance:</label>
+                <select id="birth-year" name="birth-year" required>
+                    <option value="">Choisir</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                    <option value="2012">2012</option>
+                    <option value="2011">2011</option>
+                    <option value="2010">2010</option>
+                    <option value="2009">2009</option>
+                    <option value="2008">2008</option>
+                    <option value="2007">2007</option>
+                    <option value="2006">2006</option>
+                    <option value="2005">2005</option>
+                    <option value="2004">2004</option>
+                    <option value="2003">2003 ou avant</option>
+                </select>
+                <label for="gender">Genre:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Masculin</option>
+                    <option value="female">Féminin</option>
+                </select>
+                <button type="submit">Soumettre</button>
+            </form>
+            <div id="result" class="result"></div>
+            <!-- Bouton de contact ajouté ici -->
+            <button id="contact-button" class="contact-button" >Nous contacter</button>
+        </div>
+    </div>
 
     <div id="footer"></div>
 
-    <script src="/js/main.js"></script>
     <script>
-        loadHTML('/commun/menu.html', 'menu');
-        loadHTML('/commun/footer.html', 'footer');
+        document.getElementById('category-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const birthYear = document.getElementById('birth-year').value;
+            const gender = document.getElementById('gender').value;
+            let category = '';
+            let schedule = '';
+
+            // Détermination de la catégorie et des horaires en fonction de l'année de naissance et du genre
+            if (birthYear === '2021' || birthYear === '2020') {
+                category = 'Baby - Tatami en haut';
+                schedule = 'Mercredi 16h30 - 17h30';
+            } else if (birthYear === '2019' || birthYear === '2018') {
+                category = 'M7';
+                schedule = 'Mercredi 17h30 - 18h45';
+            } else if (birthYear === '2017' || birthYear === '2016') {
+                category = 'M9';
+                schedule = 'Mercredi 17h30 - 18h45';    
+            } else if (birthYear === '2015' || birthYear === '2014') {
+                category = 'M11';
+                schedule = 'Mercredi 17h30 - 18h45 et Vendredi 17h30 - 18h45';
+            } else if (birthYear === '2013' || birthYear === '2012') {
+                if (gender === 'female') {
+                    category = 'M13 Féminin';
+                    schedule = 'Mercredi 17h30 - 18h45 et Vendredi 17h30 - 18h45';
+                } else if (gender === 'male') {
+                    category = 'M13 Masculin';
+                    schedule = 'Lundi 18h00 - 19h30 et Jeudi 17h30 - 18h45';
+                }
+            } else if (birthYear === '2011' || birthYear === '2010') {
+                if (gender === 'female') {
+                    category = 'M15 Féminin';
+                    schedule = 'Lundi - 18h00 à la Cordeille et Jeudi 17h30 - 18h45';
+                } else if (gender === 'male') {
+                    category = 'M15 Masculin';
+                    schedule = 'Mardi 17h30 - 18h45 et Jeudi 17h30 - 18h45';
+                }
+            } else if (birthYear === '2009' || birthYear === '2008' || birthYear === '2007') {
+                if (gender === 'female') {
+                    category = 'M18 Féminin';
+                    schedule = 'Mercredi 18h45 - 20h15 et Vendredi 18h45 - 20h15';
+                } else if (gender === 'male') {
+                    category = 'M18 Masculin';
+                    schedule = 'Mardi 17h30 - 18h45 et Jeudi 17h30 - 18h45';
+                } 
+            } else if (birthYear === '2006' || birthYear === '2005' || birthYear === '2004') {
+                if (gender === 'female') {
+                    category = 'M21 Féminin = Départ';
+                    schedule = 'Mercredi 18h45 - 20h15 et Vendredi 18h45 - 20h15';
+                } else if (gender === 'male') {
+                    category = 'M21 Masculin = Départ';
+                    schedule = 'Mardi 20h15 - 22h15 et Vendredi 20h15 - 22h15';
+                }       
+            } else {
+                category = 'Catégorie senior';
+                schedule = 'Contactez le club pour plus d\'informations';
+            }
+
+            document.getElementById('result').textContent = `Catégorie: ${category}, Horaires: ${schedule}`;
+        });
+
+        // Fonction pour charger du contenu HTML dans un élément
+        function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                });
+        }
+
+        loadHTML('../commun/menu.html', 'menu');
+        loadHTML('../commun/footer.html', 'footer');
+
+        // Gestionnaire d'événements pour le bouton de contact
+        document.getElementById('contact-button').addEventListener('click', function() {
+        // Rediriger vers la page "nousContacter.html"
+        window.location.href = 'nousContacter.html';
+        });
+
     </script>
 </body>
 </html>

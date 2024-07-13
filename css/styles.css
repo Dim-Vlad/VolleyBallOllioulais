@@ -17,7 +17,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px; /* Ajoute un peu de padding autour du contenu pour espacer du bord */
+  padding: 100px; /* Ajoute un peu de padding autour du contenu pour espacer du bord */
 }
 
 /* Style pour le logo du club */
@@ -120,7 +120,7 @@ body {
   align-items: center;
   max-width: 1200px; /* Largeur maximale du menu */
   margin: 0 auto; /* Centre le conteneur horizontalement */
-  padding: 0 20px; /* Ajoute un peu de marge intérieure */
+  padding: 0 5px; /* Ajoute un peu de marge intérieure */
 }
 
 .navbar-logo {
@@ -322,13 +322,6 @@ body {
   }
 }
 
-
-/* Styles pour le contenu principal */
-#content {
-  padding: 20px;
-  margin-top: 60px; /* Ajuster pour éviter le chevauchement avec la navbar fixe */
-  margin-bottom: 40px; /* Ajuster pour éviter le chevauchement avec le footer fixe */
-}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -564,7 +557,7 @@ input[type=submit]:hover {
 }
 
 
-/* Bureau images des membres */
+/* Tableau des entrainements */
 
 
 /* REMARQUE */
