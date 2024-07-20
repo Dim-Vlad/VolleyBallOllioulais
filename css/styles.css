@@ -117,8 +117,6 @@ body {
 }
 
 
-
-
 /* Styles pour le menu */
 .navbar {
   background-color: #ACC2AB; /* Couleur de fond du menu */
@@ -159,7 +157,7 @@ body {
   margin-left: 0; /* Ajustez cette valeur pour déplacer le logo plus à gauche */
 }
 
-/* Style du menu burger */
+/* Style du bouton menu burger */
 .navbar-toggler {
   background: none; /* Aucune couleur de fond pour le bouton burger */
   border: none; /* Supprime la bordure du bouton burger */
@@ -170,6 +168,8 @@ body {
   position: relative; /* Permet de positionner le bouton burger avec `margin` */
   margin-left: auto; /* Pousse le bouton burger vers la droite */
   margin-right: 20px; /* Ajoute une marge à droite du bouton burger */
+  width: 30px; /* Largeur du bouton burger */
+  height: 25px; /* Hauteur du bouton burger */
 }
 
 /* Style des liens du menu */
@@ -179,7 +179,6 @@ body {
   margin-right: 30px; /* Ajoute une marge à droite des liens du menu */
 }
 
-/* Masque les liens du menu burger par défaut */
 .navbar-links a {
   color: #063E0B; /* Couleur des liens du menu */
   text-decoration: none; /* Supprime le soulignement des liens */
@@ -192,52 +191,6 @@ body {
   background-color: white; /* Couleur de fond au survol */
   color: #063E0B; /* Couleur du texte au survol */
   border-radius: 20px;
-  
-}
-
-/* Style des éléments du menu déroulant */
-.dropdown {
-  position: relative; /* Positionner les éléments enfants par rapport à ce conteneur */
-}
-
-.dropbtn {
-  background: none; /* Aucune couleur de fond pour le bouton du menu déroulant */
-  border: none; /* Supprime la bordure du bouton */
-  color: #063E0B; /* Couleur du texte du bouton du menu déroulant */
-  padding: 12px 16px; /* Espace intérieur du bouton */
-  cursor: pointer; /* Changement du curseur au survol */
-  font-family: 'Open Sans', sans-serif; /* Police de caractères pour le bouton */  
-}
-
-/* Style du menu déroulant */
-.dropdown-content {
-  display: none; /* Cache le menu déroulant par défaut */
-  position: absolute; /* Positionne le menu déroulant par rapport au parent */
-  background-color: #ACC2AB; /* Couleur de fond du menu déroulant */
-  min-width: 160px; /* Largeur minimale du menu déroulant */
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Ombre sous le menu déroulant */
-  z-index: 1; /* Assure que le menu est au-dessus des autres éléments */
-  border-radius: 20px;
-}
-
-/* Style des liens dans le menu déroulant */
-.dropdown-content a {
-  color: #063E0B; /* Couleur du texte des liens dans le menu déroulant */
-  padding: 12px 16px; /* Espace intérieur des liens */
-  text-decoration: none; /* Supprime le soulignement des liens */
-  display: block; /* Les liens s'affichent en bloc */
-  font-family: 'Open Sans', sans-serif; /* Police de caractères pour les liens */
-}
-
-/* Effet au survol des liens du menu déroulant */
-.dropdown-content a:hover {
-  background-color: white; /* Couleur de fond au survol */
-  color: #063E0B; /* Couleur du texte au survol */
-}
-
-/* Affiche le menu déroulant quand le bouton est survolé */
-.dropdown:hover .dropdown-content {
-  display: block;
 }
 
 /* Styles Responsifs */
@@ -249,23 +202,49 @@ body {
   .navbar-links {
     display: none; /* Masque les liens du menu par défaut sur les petits écrans */
     flex-direction: column; /* Aligne les liens en colonne */
-    width: 100%; /* Prend toute la largeur de l'écran */
+    width: 70%; /* Largeur du menu burger */
+    max-width: 300px; /* Largeur maximale du menu burger */
     text-align: center; /* Centre les textes des liens */
-    margin-right: 0; /* Supprime la marge droite */
+    margin: 0; /* Supprime les marges */
+    position: fixed; /* Fixe le menu burger */
+    top: 0; /* Positionne le menu en haut */
+    left: 0; /* Aligne le menu à gauche */
+    background-color: #ACC2AB; /* Couleur de fond du menu burger */
+    height: 100%; /* Hauteur du menu burger */
+    z-index: 1001; /* Assure que le menu est au-dessus de tout */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre sous le menu pour un effet de profondeur */
+    transform: translateX(-100%); /* Masque le menu en le déplaçant à gauche */
+    transition: transform 0.3s ease-in-out; /* Animation pour l'ouverture et la fermeture */
+    border-radius: 20px; /* Bords arrondis */
   }
 
-  /* Affiche les liens du menu quand la classe 'show' est ajoutée */
   .navbar-links.show {
-    display: flex;
+    display: flex; /* Affiche les liens du menu en mode burger */
+    transform: translateX(0); /* Affiche le menu en le déplaçant vers la droite */
   }
 
   .navbar-links a {
     margin: 10px 0; /* Espace entre les liens en mode burger */
   }
 
-  /* Positionne le menu déroulant en mode burger */
   .dropdown-content {
-    position: static;
+    position: static; /* Positionne le menu déroulant en mode burger */
+  }
+
+  /* Style de l'overlay */
+  .overlay {
+    display: none; /* Masque l'overlay par défaut */
+    position: fixed; /* Fixe l'overlay */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Largeur de l'overlay */
+    height: 100vh; /* Hauteur de l'overlay */
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond semi-transparente */
+    z-index: 1000; /* Assure que l'overlay est au-dessus du contenu */
+  }
+
+  .overlay.show {
+    display: block; /* Affiche l'overlay lorsqu'il est nécessaire */
   }
 }
 

@@ -1,49 +1,47 @@
-// Fonction pour charger dynamiquement un fichier HTML dans un élément de la page
-function loadHTML(file, elementId) {
-  fetch(file)
-    .then(response => {
-      // Vérifie si la réponse est correcte
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      // Retourne le contenu du fichier sous forme de texte
-      return response.text();
-    })
-    .then(data => {
-      // Insère le contenu du fichier dans l'élément spécifié
-      document.getElementById(elementId).innerHTML = data;
-      // Si le menu est chargé, rebind le toggle function
-      if (elementId === 'menu') {
-        document.querySelector('.navbar-toggler').addEventListener('click', toggleMenu);
-      }
-    })
-    .catch(error => {
-      // Affiche une erreur en cas de problème avec l'opération de fetch
-      console.error('There has been a problem with your fetch operation:', error);
-    });
+// Fonction pour afficher ou masquer le menu burger
+function toggleMenu() {
+  const menu = document.querySelector('.navbar-links');
+  const toggler = document.querySelector('.navbar-toggler');
+  if (menu) {
+      menu.classList.toggle('show');
+      toggler.classList.toggle('close');
+  }
 }
 
-/* Carte NOS EQUIPES */
-let items = document.querySelectorAll('.item');
-console.log(items);
-items.forEach(item => {
-  item.addEventListener('mousemove', (e) => {
-      // Utilisation correcte de l'objet événement 'e'
-      let positionPx = e.x - item.getBoundingClientRect().left;
-      let positionX = (positionPx / item.offsetWidth) * 100;
+// Fonction pour fermer le menu si on clique à l'extérieur
+function closeMenu(event) {
+  const menu = document.querySelector('.navbar-links');
+  const toggler = document.querySelector('.navbar-toggler');
+  if (menu && !menu.contains(event.target) && !toggler.contains(event.target)) {
+      menu.classList.remove('show');
+      toggler.classList.remove('close');
+  }
+}
 
-      let positionPy = e.y - item.getBoundingClientRect().top;
-      let positionY = (positionPy / item.offsetHeight) * 100;
+// Initialisation des événements
+function initializeMenu() {
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  if (navbarToggler) {
+      navbarToggler.addEventListener('click', toggleMenu);
+  }
 
-      item.style.setProperty('--rX', (0.5) * (50 - positionY) + 'deg');
-      item.style.setProperty('--rY', -(0.5) * (50 - positionX) + 'deg');
-  });
+  // Ajouter un écouteur d'événement pour fermer le menu lorsqu'on clique en dehors
+  document.addEventListener('click', closeMenu);
+}
 
-  item.addEventListener('mouseout', () => {
-      item.style.setProperty('--rX', '0deg');
-      item.style.setProperty('--rY', '0deg');
-  });
-});
+// Charge les contenus HTML
+function loadHTML(url, elementId) {
+  fetch(url)
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById(elementId).innerHTML = data;
+          if (elementId === 'menu') {
+              initializeMenu(); // Initialiser les événements du menu burger
+          }
+      })
+      .catch(error => console.error('Erreur de chargement:', error));
+}
 
-
-/* Cartes galerie */
+// Chargement des contenus HTML
+loadHTML('../commun/menu.html', 'menu');
+loadHTML('../commun/footer.html', 'footer');
