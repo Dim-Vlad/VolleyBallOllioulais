@@ -16,10 +16,83 @@
             <img src="/images/LogoVBO.png" alt="Logo du club" class="club-logo">
             <div class="text-content">
                 <h1>Galerie</h1>
-                <p>Vous pouvez nous partager vos photos pour qu'elles soient ensuite publier sur nos réseaux.</p>
+                <p>Vous pouvez nous partager vos photos pour qu'elles soient ensuite publiées sur nos réseaux.</p>
             </div>
         </div>
-    </div>        
+    </div>
+    
+    <!-- Carrousel d'images -->
+    <h2>Images à la une</h2>
+
+        <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="/images/ImageEntrainement.jpg" alt="img 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/ImageMatch.jpg" alt="img 2">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/mainCercle.jpg" alt="img 3">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/ImageEntrainement.jpg" alt="img 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/ImageMatch.jpg" alt="img 2">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/mainCercle.jpg" alt="img 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    
+    <h2>D'autres photos</h2>    
+        
+    <!-- Dossier Saison 2024-2025 -->
+    <div class="photo-gallery">
+        <h3>Saison 2024-2025</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="/images/ImageEntrainement.jpg" alt="img 1">
+            </div>
+            <div class="gallery-item">
+                <img src="/images/ImageMatch.jpg" alt="img 2">
+            </div>
+            <div class="gallery-item">
+                <img src="/images/mainCercle.jpg" alt="img 3">
+            </div>
+            <!-- Ajoutez plus de photos ici -->
+        </div>
+    </div>
+
+    <!-- Dossier Archives -->
+    <div class="photo-gallery">
+        <h3>Archives</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <a href="/pages/404.html">
+                    <p>Saison 2023-2024</p>
+                    <img src="/images/ImageEntrainement.jpg" alt="img 1">    
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="/pages/404.html">
+                    <p>Saison 2022-2023</p>
+                    <img src="/images/ImageEntrainement.jpg" alt="img 1">    
+                </a>
+            </div>            
+            <div class="gallery-item">
+                <a href="/pages/evenements.html"> 
+                    <p>Evènements</p>
+                    <img src="/images/mainCercle.jpg" alt="img 3">
+                </a>
+            </div>
+            <!-- Ajoutez plus de photos ici -->
+        </div>
+    </div>
 
     <div id="footer"></div>
 
@@ -27,6 +100,35 @@
     <script>
         loadHTML('/commun/menu.html', 'menu');
         loadHTML('/commun/footer.html', 'footer');
+
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-item');
+            if (index >= slides.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            for (let slide of slides) {
+                slide.style.display = 'none';
+            }
+            slides[currentIndex].style.display = 'block';
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentIndex);
+        });
     </script>
 </body>
 </html>
