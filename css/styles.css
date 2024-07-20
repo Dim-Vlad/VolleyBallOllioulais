@@ -56,8 +56,8 @@ body {
   max-width: 1200px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
-  border-radius: 10px;
+  background-color: #85B683;
+  border-radius: 20px;
 }
 
 /* Styles généraux pour les articles */
@@ -76,7 +76,7 @@ body {
 .image-presentation {
   max-width: 40%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 20px;
   margin: 0 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -89,7 +89,7 @@ body {
 .text-content-presentation h2 {
   margin: 0;
   font-size: 1.8rem;
-  color: #85B683;
+  color: #063E0B;
 }
 
 .text-content-presentation p {
