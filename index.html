@@ -13,13 +13,12 @@
   <div id="content">
     <!-- Contenu principal ici -->    
   </div>
-  <div id="footer"></div>
-
+  
   <script src="js/main.js"></script>
   <script>
     loadHTML('commun/menu.html', 'menu');
-    loadHTML('commun/footer.html', 'footer');
     loadHTML('pages/home.html', 'content');
+    loadHTML('commun/footer.html', 'footer');
 
     window.addEventListener('error', function() {
         window.location.href = '/pages/404.html';
