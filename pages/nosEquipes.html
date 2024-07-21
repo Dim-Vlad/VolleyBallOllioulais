@@ -18,7 +18,7 @@
             <img src="/images/LogoVBO.png" alt="Logo du club" class="club-logo">
             <div class="text-content">
                 <h1>Nos équipes</h1>
-                <p>Connaître le classement d'une équipe, qui entraine, nous contacter ? </br>
+                <p>Connaître le classement d'une équipe, qui entraine ou contactez nous ? </br>
                     Cliquez sur la photo de l'équipe.</p>
             </div>
         </div>
@@ -101,7 +101,7 @@
     <!-- Modale -->
     <div id="infoModal" class="modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="close" onclick="closeModal()">&times;</span>
+            <span class="close" onclick="closeModal(event)">&times;</span>
             <h2 id="modal-title"></h2>
             <img id="modal-image" src="" alt="img de l'équipe" style="width: 100%; border-radius: 10px;">
             <p id="modal-body"></p>
@@ -109,7 +109,8 @@
             <p></p>
             <a id="contact-link" href="/pages/nousContacter.html">Nous contacter</a>
         </div>
-    </div>
+</div>
+
     
     <div id="footer"></div>
     

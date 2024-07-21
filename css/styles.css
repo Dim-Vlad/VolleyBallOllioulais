@@ -1,4 +1,11 @@
 /* Styles de base pour le site */
+:root {
+  --primary-color: #85B683;
+  --secondary-color: #ACC2AB;
+  --bg-color: #83DC7A;
+  --color-title: #063E0B;
+}
+
 body {
   font-family: 'Merriweather', serif;
   margin: 0;
@@ -28,6 +35,7 @@ body {
   margin-left: 50px;
 }
 
+
 /* Style pour le conteneur de texte */
 .text-content {
   flex: 1; /* Prend l'espace restant à côté du logo */
@@ -56,7 +64,7 @@ body {
   max-width: 1200px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #85B683;
+  background-color: var(--bg-color);
   border-radius: 20px;
 }
 
@@ -89,7 +97,7 @@ body {
 .text-content-presentation h2 {
   margin: 0;
   font-size: 1.8rem;
-  color: #063E0B;
+  color: var(--color-title);
 }
 
 .text-content-presentation p {
@@ -119,8 +127,7 @@ body {
 
 /* Styles pour le menu */
 .navbar {
-  background-color: #ACC2AB; /* Couleur de fond du menu */
-  color: #ACC2AB; /* Couleur du texte dans le menu */
+  background-color: var(--secondary-color); /* Couleur de fond du menu */
   padding: 10px;
   position: fixed; /* Fixe le menu en haut de la page */
   top: 0;
@@ -180,7 +187,7 @@ body {
 }
 
 .navbar-links a {
-  color: #063E0B; /* Couleur des liens du menu */
+  color: var(--color-title); /* Couleur des liens du menu */
   text-decoration: none; /* Supprime le soulignement des liens */
   padding: 12px 16px; /* Espace intérieur des liens */
   font-family: 'Open Sans', sans-serif; /* Police de caractères pour les liens */
@@ -189,7 +196,7 @@ body {
 /* Effet au survol des liens du menu */
 .navbar-links a:hover {
   background-color: white; /* Couleur de fond au survol */
-  color: #063E0B; /* Couleur du texte au survol */
+  color: var(--color-title); /* Couleur du texte au survol */
   border-radius: 20px;
 }
 
@@ -209,7 +216,7 @@ body {
     position: fixed; /* Fixe le menu burger */
     top: 0; /* Positionne le menu en haut */
     left: 0; /* Aligne le menu à gauche */
-    background-color: #ACC2AB; /* Couleur de fond du menu burger */
+    background-color: var(--secondary-color); /* Couleur de fond du menu burger */
     height: 100%; /* Hauteur du menu burger */
     z-index: 1001; /* Assure que le menu est au-dessus de tout */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre sous le menu pour un effet de profondeur */
@@ -251,8 +258,8 @@ body {
 
 /* Styles pour le footer */
 .footer {
-  background-color: #ACC2AB;
-  color: #063E0B;
+  background-color: var(--secondary-color);
+  color: var(--color-title);
   text-align: center;
   padding: 20px 0;
   width: 100%;
@@ -276,7 +283,7 @@ body {
 }
 
 .liens p a {
-  color: #063E0B;
+  color: var(--color-title);
   text-decoration: none;
 }
 
@@ -304,7 +311,7 @@ body {
 .footer-copyright {
   text-align: center;
   padding-top: 5px;
-  border-top: 1px solid #063E0B;
+  border-top: 1px solid var(--color-title);
 }
 
 /* Responsive Styles */
@@ -333,7 +340,7 @@ body {
   }
   .navbar-links a {
     padding: 10px;
-    border-top: 1px solid #063E0B;
+    border-top: 1px solid var(--color-title);
   }
   .navbar-links a:first-child {
     border-top: none;
@@ -345,7 +352,6 @@ body {
 
 
 /* Style cartes Nos équipes */
-
 .main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -409,7 +415,7 @@ body {
   --bX: 50%;
   --bY: 80%;
   width: 100%;
-  background-color: #ACC2AB;
+  background-color: var(--secondary-color);
   border-radius: 20px;
   transform: rotateX(var(--rX)) rotateY(var(--rY));
   transition: 0.2s;
@@ -433,7 +439,7 @@ body {
   position: fixed;
   z-index: 1000; 
   left: 0;
-  top: 0;  
+  top: 50px;  
   width: 100%;
   height: 100%;
   overflow: auto; 
@@ -443,18 +449,18 @@ padding-top: 20px;
 }
 
 .modal-content {
-  background-color: #ACC2AB;
+  background-color: var(--secondary-color);
   margin: 5% auto; 
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; 
+  width: 90%; 
   max-width: 600px;
   text-align: center;
   border-radius: 20px;
 }
 
 .close {
-  color: #aaa;
+  color: black;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -462,7 +468,7 @@ padding-top: 20px;
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: white;
   text-decoration: none;
   cursor: pointer;
 }
@@ -502,8 +508,8 @@ label {
 
 input[type=submit] {
   margin-top: 10px;
-  background-color: #85B683;
-  color: #063E0B;
+  background-color: var(--primary-color);
+  color: var(--color-title);
   font-weight: bold;
   padding: 12px 20px;
   border: none;
@@ -513,7 +519,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #ACC2AB;
+  background-color: var(--secondary-color);
   color: white;
 }
 
@@ -632,7 +638,7 @@ input[type=submit]:hover {
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #85B683;
+  background-color: var(--primary-color);
 }
 
 .gallery-item img {
