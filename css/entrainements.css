@@ -5,9 +5,14 @@
     width: 90%;
     margin: 20px auto;
 }
+.training-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 0 auto;
+}
 .training-table {
-    width: 60%;
-    max-width: 800px;
+    width: 90%;
+    max-width: 1200px;
     margin: 20px;
     border-collapse: collapse;
 }
@@ -94,29 +99,7 @@
     background-color: #D64D4D;
 }
 
-/* Media query pour les écrans plus petits */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .training-table {
-        width: 100%;
-        margin: 10px 0;
-    }
-    .form-container {
-        width: 100%;
-    }
-}
-
-/* Ajoutez un conteneur autour de votre tableau */
-.training-table-container {
-    width: 100%;
-    overflow-x: auto;
-    margin: 0 auto; /* Centrer le conteneur sur l'écran */
-}
-
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .container {
         flex-direction: column;
         align-items: center;
