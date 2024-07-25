@@ -29,39 +29,6 @@ function initializeMenu() {
   document.addEventListener('click', closeMenu);
 }
 
-// Fonction pour afficher la modale
-function openModal(title, imageUrl, bodyText, linkUrl) {
-  const modal = document.getElementById('infoModal');
-  document.getElementById('modal-title').innerText = title;
-  document.getElementById('modal-image').src = imageUrl;
-  document.getElementById('modal-body').innerText = bodyText;
-  document.getElementById('modal-link').href = linkUrl;
-  modal.style.display = 'block';
-}
-
-// Fonction pour fermer la modale
-function closeModal(event) {
-  const modal = document.getElementById('infoModal');
-  if (event) {
-      event.stopPropagation();
-  }
-  modal.style.display = 'none';
-}
-
-// Ajout d'un écouteur pour fermer la modale si on clique à l'extérieur du contenu
-document.getElementById('infoModal').addEventListener('click', function(event) {
-  if (event.target === this) {
-      closeModal();
-  }
-});
-
-// Optionnel: fermeture de la modale en appuyant sur la touche "Échap"
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape') {
-      closeModal();
-  }
-});
-
 
 // Charge les contenus HTML
 function loadHTML(url, elementId) {

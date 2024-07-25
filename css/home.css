@@ -1,0 +1,82 @@
+/* Style pour le titre */
+.text-content h1 {
+    margin: 0; /* Enlève la marge par défaut pour un meilleur alignement */
+    line-height: 1.5; /* Ajuste l'espacement entre les lignes du titre */
+}
+
+  /* Style pour le paragraphe */
+.text-content p {
+    margin-top: 10px; /* Ajuste la marge supérieure du paragraphe */
+    line-height: 1.6; /* Ajuste l'espacement entre les lignes du paragraphe */
+}
+
+/*Styles PAGE HOME*/
+/* Styles généraux pour les conteneurs */
+[id^="content-presentation"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-color);
+    border-radius: 20px;
+}
+
+/* Styles généraux pour les articles */
+.header-content-presentation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Styles pour l'article 2 (texte à gauche, image à droite) */
+.header-content-presentation.reverse {
+    flex-direction: row-reverse;
+}
+
+  /* Styles généraux pour les images */
+.image-presentation {
+    max-width: 40%;
+    height: auto;
+    border-radius: 20px;
+    margin: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour le contenu textuel */
+.text-content-presentation {
+    max-width: 60%;
+}
+
+.text-content-presentation h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--color-title);
+}
+
+.text-content-presentation p {
+    font-size: 1rem;
+    color: black;
+    line-height: 1.5;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .header-content-presentation, .header-content-presentation.reverse {
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .image-presentation {
+    max-width: 100%;
+    margin: 0 0 20px 0;
+    }
+
+    .text-content-presentation {
+    max-width: 100%;
+    text-align: center;
+    }
+}

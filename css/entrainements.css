@@ -1,0 +1,131 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    margin: 20px auto;
+}
+.training-table {
+    width: 60%;
+    max-width: 800px;
+    margin: 20px;
+    border-collapse: collapse;
+}
+.training-table th, .training-table td {
+    border: 1px solid;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+.training-table th { /* En-tête du tableau */
+    background-color: #c9c9c9;
+    font-weight: bold;
+}
+.training-table tr:nth-child(even) { 
+    background-color: #f9f9f9; /* Couleur de fond une ligne sur deux */
+}
+.training-table tr:hover td:not(.no-hover) {
+    background-color: #85B683; /* Couleur de fond ligne en survol */
+}
+.training-table tr:hover .day {
+    color: #fff;
+}
+.training-table .day {
+    font-weight: bold;
+}
+/* Formulaire connaitre catégorie */
+.form-container {
+    width: 35%;
+    max-width: 400px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.form-container input, .form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #85B683;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.form-container button:hover {
+    background-color: #063E0B;
+}
+.result {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #b90000;
+    font-weight: bold;
+}
+.contact-button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.contact-button:hover {
+    background-color: #D64D4D;
+}
+
+/* Media query pour les écrans plus petits */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .training-table {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .form-container {
+        width: 100%;
+    }
+}
+
+/* Ajoutez un conteneur autour de votre tableau */
+.training-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 0 auto; /* Centrer le conteneur sur l'écran */
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .training-table {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .form-container {
+        width: 100%;
+    }
+}
