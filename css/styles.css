@@ -6,6 +6,21 @@
   --color-title: #063E0B;
 }
 
+.root-colors {
+  --50: #f3f6f3;
+  --100: #e3eae1;
+  --200: #c6d5c5;
+  --300: #acc2ab;
+  --400: #739572;
+  --500: #527753;
+  --600: #3d5e3f;
+  --700: #314b33;
+  --800: #293c2b;
+  --900: #223224;
+  --950: #121c13;
+}
+
+
 body {
   font-family: 'Merriweather', serif;
   margin: 0;
