@@ -21,54 +21,68 @@
             </div>
         </div>
     </div>
-<!---------- CONTAINER CONTAINER ----------------->
-<div class="content-container">   
-    <!-----Formulaire ------->
-    <div class="form-container">
-        <form action="/action_page.php">
-            <div class="row">
-            <div class="col-25">
-                <label for="fname">Nom</label>
-            </div>
-            <div class="col-75">
-                <input type="text" id="fname" name="firstname" placeholder="Mon nom..">
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-25">
-                <label for="lname">Prénom</label>
-            </div>
-            <div class="col-75">
-                <input type="text" id="lname" name="lastname" placeholder="Mon prénom..">
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-25">
-                <label for="mail">E-mail</label>
-            </div>
-            <div class="col-75">
-            <input type="text"  id="mail" name="mail" placeholder="ex: mon.mail@mail.com">
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-25">
-                <label for="subject">Sujet</label>
-            </div>
-            <div class="col-75">
-                <textarea id="subject" name="subject" placeholder="Texte.." style="height:200px"></textarea>
-            </div>
-            </div>
-            <div class="row">
-            <input type="submit" value="Envoyer">
-            </div>
-        </form>
-    </div>
-</div>
 
-    <div class="plan">
-            <h2>Plan</h2>
+    <div class="content-container">
+        <div class="form-map-wrapper">
+            <!-----Formulaire ------->
+            <div class="form-container">
+                <form action="/action_page.php">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Nom</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="fname" name="firstname" placeholder="Mon nom..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="lname">Prénom</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="lname" name="lastname" placeholder="Mon prénom..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="mail">E-mail</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="mail" name="mail" placeholder="ex: mon.mail@mail.com">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="subject">Sujet</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea id="subject" name="subject" placeholder="Texte.." style="height:200px"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Envoyer">
+                    </div>
+                </form>
+            </div>
+            <!----- Map ------->
+            <div class="map-container">
+                <iframe title="maps" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5822.942177210254!2d5.846950039566753!3d43.13663599912857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1722042914782!5m2!1sfr!2sfr" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            </div>
+        </div>
+
+        <!----- Adresses ------->
+        <div class="addresses">
+            <h2>Nos adresses</h2>
+            <ul>
+                <li><a href="https://maps.google.com?q=43.1349214017089, 5.851102098681409" target="_blank">Siège social</a></li>
+                <li><a href="https://maps.google.com?q=43.13496054830499, 5.852700695084725" target="_blank">Parking Gymnase Piemontesi</a></li>
+                <li><a href="https://maps.google.com?q=43.13981669634135, 5.844410150436129" target="_blank">Gymnase Vallon</a></li>
+            </ul>
+        </div>
     </div>
-    
+
     <div id="footer"></div>
 
     <script src="/js/main.js"></script>

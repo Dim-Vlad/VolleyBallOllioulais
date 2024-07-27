@@ -4,19 +4,13 @@
     font-family: 'Merriweather', serif;
 }
 
-
-/************ BEGIN CONTENT CONTAINER  ***************/
 .content-container {
     margin: 0;
-    padding-top: 2%;
-    padding-right: 35%;
-    padding-bottom: 10%;
-    padding-left: 15%;
+    padding: 2% 15% 10% 15%;
     max-height: 100%;
     box-sizing: border-box;  
 }
 
-/************ BEGIN FORM  ***************/
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
@@ -33,7 +27,7 @@ label {
 input[type=submit] {
     margin-top: 10px;
     background-color: var(--primary-color);
-    color: var(--color-title);
+    color: var(--secondary-color);
     font-weight: bold;
     padding: 12px 20px;
     border: none;
@@ -73,13 +67,74 @@ input[type=submit]:hover {
     clear: both;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+.form-map-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.form-container, .map-container {
+    flex: 1 1 45%; /* Chaque section occupe environ 45% de l'espace disponible */
+    min-width: 300px; /* Largeur minimale */
+    max-width: 600px; /* Largeur maximale */
+    margin: 10px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 300px; /* Ajustez selon vos besoins */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+}
+
+@media screen and (max-width: 768px) {
+    .form-container, .map-container {
+        flex: 1 1 100%; /* Passe à une seule colonne sur les petits écrans */
+    }
+}
+
 @media screen and (max-width: 600px) {
     .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
+        width: 100%;
+        margin-top: 0;
     }
     input[type=submit] {
-    margin-top: 10px;
+        margin-top: 10px;
     }
+}
+
+.addresses {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.addresses h2 {
+    margin-bottom: 10px;
+}
+
+.addresses ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.addresses li {
+    margin: 10px 0;
+}
+
+.addresses a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.addresses a:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
 }
