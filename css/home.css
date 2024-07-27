@@ -1,12 +1,6 @@
 .text-content h1 {
-    margin: 0; /* Enlève la marge par défaut pour un meilleur alignement */
+    margin: 0 10px; /* Enlève la marge par défaut pour un meilleur alignement */
     line-height: 1.5; /* Ajuste l'espacement entre les lignes du titre */
-}
-
-  /* Style pour le paragraphe */
-.text-content p {
-    margin-top: 10px; /* Ajuste la marge supérieure du paragraphe */
-    line-height: 1.6; /* Ajuste l'espacement entre les lignes du paragraphe */
 }
 
 [id^="content-presentation"] {
@@ -75,5 +69,10 @@
     .text-content-presentation {
     max-width: 100%;
     text-align: center;
+    }
+
+    .text-content{
+        margin: 0 10px;
+        font-size: 12px;
     }
 }

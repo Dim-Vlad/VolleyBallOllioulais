@@ -41,12 +41,12 @@ body {
   padding: 100px; /* Ajoute un peu de padding autour du contenu pour espacer du bord */
 }
 
-/* Style pour le logo du club */
-.club-logo {
-  width: 150px; /* Ajustez la taille du logo selon vos besoins */
-  height: auto; /* Conserve les proportions du logo */
-  margin-right: 20px; /* Espace entre le logo et le texte */
-  margin-left: 50px;
+.logo-club {
+  width: 50%;
+  height: auto;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
 }
 
 /* Style pour le conteneur de texte */
@@ -130,61 +130,6 @@ body {
   border-radius: 20px;
 }
 
-/* Styles Responsifs */
-@media (max-width: 768px) {
-  .navbar-toggler {
-    display: block; /* Affiche le bouton burger sur les petits écrans */
-  }
-
-  .navbar-links {
-    display: none; /* Masque les liens du menu par défaut sur les petits écrans */
-    flex-direction: column; /* Aligne les liens en colonne */
-    width: 70%; /* Largeur du menu burger */
-    max-width: 300px; /* Largeur maximale du menu burger */
-    text-align: center; /* Centre les textes des liens */
-    margin: 0; /* Supprime les marges */
-    position: fixed; /* Fixe le menu burger */
-    top: 0; /* Positionne le menu en haut */
-    left: 0; /* Aligne le menu à gauche */
-    background-color: var(--primary-color); /* Couleur de fond du menu burger */
-    height: 100%; /* Hauteur du menu burger */
-    z-index: 1001; /* Assure que le menu est au-dessus de tout */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre sous le menu pour un effet de profondeur */
-    transform: translateX(-100%); /* Masque le menu en le déplaçant à gauche */
-    transition: transform 0.3s ease-in-out; /* Animation pour l'ouverture et la fermeture */
-    border-radius: 20px; /* Bords arrondis */
-  }
-
-  .navbar-links.show {
-    display: flex; /* Affiche les liens du menu en mode burger */
-    transform: translateX(0); /* Affiche le menu en le déplaçant vers la droite */
-  }
-
-  .navbar-links a {
-    margin: 10px 0; /* Espace entre les liens en mode burger */
-  }
-
-  .dropdown-content {
-    position: static; /* Positionne le menu déroulant en mode burger */
-  }
-
-  /* Style de l'overlay */
-  .overlay {
-    display: none; /* Masque l'overlay par défaut */
-    position: fixed; /* Fixe l'overlay */
-    top: 0;
-    left: 0;
-    width: 100vw; /* Largeur de l'overlay */
-    height: 100vh; /* Hauteur de l'overlay */
-    background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond semi-transparente */
-    z-index: 1000; /* Assure que l'overlay est au-dessus du contenu */
-  }
-
-  .overlay.show {
-    display: block; /* Affiche l'overlay lorsqu'il est nécessaire */
-  }
-}
-
 
 /* Styles pour le footer */
 .footer {
@@ -244,38 +189,77 @@ body {
   border-top: 1px solid var(--bg-dark);
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .footer-content {
-      flex-direction: column;
-      align-items: center;
-  }
-  
-  .adresse, .liens, .réseaux {
-      padding: 10px 0;
-      text-align: center;
-  }
-}
 
-
-/* Responsive Styles */
 @media (max-width: 768px) {
   .navbar-toggler {
-    display: block; /* Show the burger menu button */
+    display: block; /* Affiche le bouton burger sur les petits écrans */
   }
+
   .navbar-links {
-    display: none; /* Hide the menu links by default */
-    flex-direction: column;
-    width: 100%;
+    display: none; /* Masque les liens du menu par défaut sur les petits écrans */
+    flex-direction: column; /* Aligne les liens en colonne */
+    width: 70%; /* Largeur du menu burger */
+    max-width: 300px; /* Largeur maximale du menu burger */
+    text-align: center; /* Centre les textes des liens */
+    margin: 0; /* Supprime les marges */
+    position: fixed; /* Fixe le menu burger */
+    top: 0; /* Positionne le menu en haut */
+    left: 0; /* Aligne le menu à gauche */
+    background-color: var(--primary-color); /* Couleur de fond du menu burger */
+    height: 100%; /* Hauteur du menu burger */
+    z-index: 1001; /* Assure que le menu est au-dessus de tout */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre sous le menu pour un effet de profondeur */
+    transform: translateX(-100%); /* Masque le menu en le déplaçant à gauche */
+    transition: transform 0.3s ease-in-out; /* Animation pour l'ouverture et la fermeture */
+    border-radius: 20px; /* Bords arrondis */
   }
-  .navbar-links a {
-    padding: 10px;
-    border-top: 1px solid var(--secondary-color);
-  }
-  .navbar-links a:first-child {
-    border-top: none;
-  }
+
   .navbar-links.show {
-    display: flex; /* Show the menu links when toggled */
+    display: flex; /* Affiche les liens du menu en mode burger */
+    transform: translateX(0); /* Affiche le menu en le déplaçant vers la droite */
   }
+
+  .navbar-links a {
+    margin: 10px 0; /* Espace entre les liens en mode burger */
+  }
+
+  .dropdown-content {
+    position: static; /* Positionne le menu déroulant en mode burger */
+  }
+
+  /* Style de l'overlay */
+  .overlay {
+    display: none; /* Masque l'overlay par défaut */
+    position: fixed; /* Fixe l'overlay */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Largeur de l'overlay */
+    height: 100vh; /* Hauteur de l'overlay */
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond semi-transparente */
+    z-index: 1000; /* Assure que l'overlay est au-dessus du contenu */
+  }
+
+  .overlay.show {
+    display: block; /* Affiche l'overlay lorsqu'il est nécessaire */
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .adresse, .liens, .réseaux {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .text-content {
+    margin: 0 10px;
+    font-size: 14px;
+}
+  .logo-club {
+    width: 80%;
+    height: auto;
+    max-width: 600px;
+}
 }
