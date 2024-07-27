@@ -11,8 +11,6 @@
     box-sizing: border-box;  
 }
 
-
-
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
@@ -95,7 +93,7 @@ input[type=submit]:hover {
 .addresses {
     padding: 20px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-top: 20px;
     text-align: center;
@@ -128,7 +126,10 @@ input[type=submit]:hover {
 
 @media screen and (max-width: 768px) {
     .form-container, .map-container {
-        flex: 1 1 100%; /* Passe à une seule colonne sur les petits écrans */
+        flex: 1 1 100%; /* Passe à une seule colonne sur les petits écrans */        
+    }
+    .form-map-wrapper {
+        justify-content: center; /* Centre les éléments dans le conteneur */
     }
     .logo-club {
         width: 80%;

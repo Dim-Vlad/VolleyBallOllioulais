@@ -75,4 +75,8 @@
         margin: 0 10px;
         font-size: 12px;
     }
+
+    [id="content-presentation1"], [id="content-presentation2"], [id="content-presentation3"]{
+        max-width: 80%;
+    }
 }
