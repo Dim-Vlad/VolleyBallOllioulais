@@ -112,22 +112,24 @@ body {
 /* Style des liens du menu */
 .navbar-links {
   display: flex; /* Affiche les liens en ligne */
-  gap: 15px; /* Espace entre les liens */
+  gap: 10px; /* Espace entre les liens */
   margin-right: 30px; /* Ajoute une marge à droite des liens du menu */
 }
 
 .navbar-links a {
   color: var(--secondary-color); /* Couleur des liens du menu */
   text-decoration: none; /* Supprime le soulignement des liens */
-  padding: 12px 16px; /* Espace intérieur des liens */
-  font-family: 'Open Sans', sans-serif; /* Police de caractères pour les liens */
+  padding: 12px 10px; /* Espace intérieur des liens */
+  font-family: 'Merriweather', serif;
 }
 
 /* Effet au survol des liens du menu */
 .navbar-links a:hover {
   background-color: white; /* Couleur de fond au survol */
-  color: var(--color-title); /* Couleur du texte au survol */
-  border-radius: 20px;
+  color: var(--secondary-color); /* Couleur du texte au survol */
+  border-radius: 10px;
+  cursor: url('/images/volley-cursor32.png'), auto; /* Spécifie l'image comme curseur et utilise un curseur par défaut si l'image n'est pas disponible */
+  transition: color 0.3s; /* Pour ajouter une transition de couleur sur survol */
 }
 
 
@@ -165,6 +167,8 @@ body {
 .liens p a:hover {
   text-decoration: underline;
   color: white;
+  cursor: url('/images/volley-cursor32.png'), auto; /* Spécifie l'image comme curseur et utilise un curseur par défaut si l'image n'est pas disponible */
+  transition: color 0.3s; /* Pour ajouter une transition de couleur sur survol */
 }
 
 .social-icons {
