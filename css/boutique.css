@@ -1,0 +1,90 @@
+.banner {
+    background-color: #b3c7af;
+    text-align: center;
+    padding: 20px 0;
+    position: sticky;
+    top: 50px;
+    z-index: 999;
+    margin-bottom: 20px;
+}
+
+.banner h1 {
+    color: var(--bg-dark);
+    font-size: 36px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.decorative-line {
+    position: relative;
+    border-top: 2px solid white;
+    margin: 0 20px;
+}
+
+.decorative-line::before,
+.decorative-line::after {
+    content: '•';
+    position: absolute;
+    font-size: 16px;
+    color: white;
+    top: -10px;
+}
+
+.decorative-line::before {
+    left: 10%;
+}
+
+.decorative-line::after {
+    right: 10%;
+}
+
+.content {
+    padding: 100px 20px; /*Ajouter du padding pour l'espacement sous le menu et la bannière*/
+}
+
+.content p {
+    margin: 20px 0;
+}
+
+.banner:before,
+.banner:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    font-size: 16px;
+    background: white;
+    width: 80%;
+    top: -10%;
+}
+
+.banner:before {
+    left: 10%;
+}
+
+.banner:after {
+    bottom: 10%;
+    left: 10%;
+}
+
+@media screen and (max-width: 768px) {
+    .banner {
+        padding: 20px 0;
+    }
+
+    .banner h1 {
+        font-size: 24px;
+    }
+
+    .decorative-line {
+        margin: 0 10px;
+    }
+
+    .decorative-line::before,
+    .decorative-line::after {
+        font-size: 12px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
