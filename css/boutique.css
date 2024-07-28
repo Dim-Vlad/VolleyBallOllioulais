@@ -1,5 +1,5 @@
 .banner {
-    background-color: #b3c7af;
+    background-color: var(--primary-color);
     text-align: center;
     padding: 20px 0;
     position: sticky;
@@ -17,25 +17,8 @@
 
 .decorative-line {
     position: relative;
-    border-top: 2px solid white;
+    border-top: 2px solid var(--bg-dark);
     margin: 0 20px;
-}
-
-.decorative-line::before,
-.decorative-line::after {
-    content: '•';
-    position: absolute;
-    font-size: 16px;
-    color: white;
-    top: -10px;
-}
-
-.decorative-line::before {
-    left: 10%;
-}
-
-.decorative-line::after {
-    right: 10%;
 }
 
 .content {
