@@ -1,0 +1,130 @@
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.organigramme, .trombinoscope {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.level {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permet d'emballer les éléments */
+    margin: 20px 0;
+}
+
+.position {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    width: 150px; /* Largeur fixe */
+    height: 200px; /* Hauteur fixe */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: double;
+    border-color: var(--bg-dark);
+    margin: 10px; /* Espacement autour des boîtes */
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.5s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.position:hover p {
+    color: white;
+}
+
+.position:hover {
+    transform: translateY(-10px);
+}
+
+.position img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Forme circulaire */
+    object-fit: cover; /* Garde les proportions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.separator {
+    width: 80%; /* Largeur de la ligne */
+    max-width: 600px; /* Largeur maximale pour le centrage */
+    border-top: 2px solid #ccc; /* Bordure en haut pour une ligne horizontale */
+    margin: 20px auto; /* Marges pour centrer la ligne */
+}
+
+.trombinoscope h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--bg-dark);
+}
+
+.minutes {
+    padding: 20px;
+    text-align: center;
+}
+
+.minutes h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--bg-dark);
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 50px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 768px) {
+    .button-container {
+        grid-template-columns: repeat(2, 1fr); /* Deux colonnes sur les écrans moyens */
+    }
+}
+
+@media (max-width: 600px) {
+    .level {
+        flex-direction: column;
+        align-items: center;
+    }
+    .position {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .button-container {
+        grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+    }
+}
