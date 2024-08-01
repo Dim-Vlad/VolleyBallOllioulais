@@ -86,11 +86,30 @@
 }
 
 .gallery-item a {
-    text-decoration: none; /* Supprime le soulignement du lien */
+    text-decoration: none;
     color: inherit; /* Garde la couleur du texte */
     display: block; /* Permet de cliquer sur tout le bloc */
 }
 
 .gallery-item a:hover p, .gallery-item a:hover img {
     opacity: 0.5; /* Ajoute un effet visuel au survol */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
 }
