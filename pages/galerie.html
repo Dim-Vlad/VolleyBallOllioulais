@@ -23,10 +23,12 @@
     </div>
     
     <div class="upload-container">
-        <label for="photo-upload" class="btn">
-        Partager des Photos
-        </label>
-        <input type="file" id="photo-upload" accept="image/*" capture="environment" multiple style="display: none;">
+        <form id="photo-form" enctype="multipart/form-data" method="post">
+            <input type="file" id="photo-upload" accept="image/*" multiple style="display: none;">
+            <label for="photo-upload" class="btn">Selectioner des Photos</label>
+            <button type="button" id="send-email" class="btn">Envoyer par Email</button>
+        </form>
+        <div id="thumbnails" class="thumbnail-container"></div> <!-- Conteneur pour les miniatures -->
     </div>
 
     <!-- Carrousel d'images -->
@@ -133,8 +135,35 @@
             showSlide(currentIndex - 1);
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            showSlide(currentIndex);
+        document.getElementById('photo-upload').addEventListener('change', function () {
+            const thumbnailsDiv = document.getElementById('thumbnails');
+            thumbnailsDiv.innerHTML = ""; // Vide le conteneur de miniatures existant
+
+            const fileList = this.files;
+            if (fileList.length > 0) {
+                for (const file of fileList) {
+                    const reader = new FileReader();
+                
+                    reader.onload = function (e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.classList.add('thumbnail');
+                        thumbnailsDiv.appendChild(img);
+                    };
+                
+                    reader.readAsDataURL(file); // Lit le fichier et affiche son contenu
+                }
+            }
+        });
+
+        document.getElementById('send-email').addEventListener('click', function () {
+            const email = 'dimitrigarrigues@gmail.com'; // Remplacez par votre adresse email
+            const subject = 'Photos pour la Galerie';
+            const body = 'Bonjour,\n\nJe vous envoie les photos pour la galerie.\n\nVeuillez les trouver en pièces jointes.\n';
+            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Ouvre l'application de messagerie par défaut
+            window.location.href = mailtoLink;
         });
     </script>
 </body>

@@ -95,7 +95,9 @@
     opacity: 0.5; /* Ajoute un effet visuel au survol */
 }
 
+
 .btn {
+    font-family: 'Merriweather', serif;
     display: inline-block;
     padding: 10px 20px;
     background-color: var(--secondary-color);
@@ -107,9 +109,35 @@
     cursor: pointer;
     transition: background-color 0.3s;
     text-align: center;
+    margin: 10px 0;
     text-decoration: none;
 }
 
 .btn:hover {
     background-color: var(--primary-color);
+}
+
+/* Requête média pour les appareils mobiles */
+@media (max-width: 768px) {
+    .btn {
+        width: 80%; /* Pour que les boutons s'étendent sur toute la largeur */
+        margin: 15px 0; /* Augmente l'espacement vertical pour les mobiles */
+    }
+}
+
+/* Ajoutons un style simple pour les miniatures */
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 5px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.thumbnail-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
 }
