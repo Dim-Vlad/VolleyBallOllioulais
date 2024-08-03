@@ -23,13 +23,14 @@
     </div>
     
     <div class="upload-container">
-        <form id="photo-form" enctype="multipart/form-data" method="post">
-            <input type="file" id="photo-upload" accept="image/*" multiple style="display: none;">
-            <label for="photo-upload" class="btn">Selectioner des Photos</label>
-            <button type="button" id="send-email" class="btn">Envoyer par Email</button>
+        <form id="photo-form" enctype="multipart/form-data" method="post" action="/php/send_mail_galerie.php">
+            <input type="file" id="photo-upload" name="photos[]" accept="image/*" multiple style="display: none;">
+            <label for="photo-upload" class="btn">Sélectionner des Photos</label>
+            <input type="submit" value="Envoyer par Email" class="btn">
         </form>
-        <div id="thumbnails" class="thumbnail-container"></div> <!-- Conteneur pour les miniatures -->
+        <div id="thumbnails" class="thumbnail-container"></div>
     </div>
+    
 
     <!-- Carrousel d'images -->
     <h2>Images à la une</h2>
@@ -134,6 +135,10 @@
         function prevSlide() {
             showSlide(currentIndex - 1);
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentIndex);
+        });
 
         document.getElementById('photo-upload').addEventListener('change', function () {
             const thumbnailsDiv = document.getElementById('thumbnails');
