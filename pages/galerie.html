@@ -34,7 +34,7 @@
 
     <!-- Carrousel d'images -->
     <h2>Images à la une</h2>
-        <div class="carousel">
+    <div class="carousel">
         <div class="carousel-inner">
             <div class="carousel-item">
                 <img src="/images/ImageEntrainement.jpg" alt="img 1">
@@ -161,15 +161,33 @@
             }
         });
 
-        document.getElementById('send-email').addEventListener('click', function () {
-            const email = 'dimitrigarrigues@gmail.com'; // Remplacez par votre adresse email
-            const subject = 'Photos pour la Galerie';
-            const body = 'Bonjour,\n\nJe vous envoie les photos pour la galerie.\n\nVeuillez les trouver en pièces jointes.\n';
-            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        document.getElementById('photo-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Empêche le rechargement de la page
 
-            // Ouvre l'application de messagerie par défaut
-            window.location.href = mailtoLink;
+            const formData = new FormData(this);
+
+            // Envoyer la requête POST avec fetch
+            fetch('/php/send_mail_galerie.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur réseau lors de l\'envoi de l\'email');
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Si la réponse est correcte, affiche un message d'alerte
+                alert('Votre email a été envoyé avec succès !');
+            })
+            .catch(error => {
+                // Si une erreur survient, affiche un message d'erreur
+                alert('Une erreur est survenue lors de l\'envoi de votre email.');
+                console.error('Erreur:', error);
+            });
         });
+
     </script>
 </body>
 </html>

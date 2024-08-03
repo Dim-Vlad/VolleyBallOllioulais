@@ -1,43 +1,53 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['photos'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $to = 'dimitrigarrigues@gmail.com';
-    $subject = 'Photos pour la Galerie';
-    $message = "Bonjour,\n\nVous avez reçu de nouvelles photos pour la galerie.\n";
+    $subject = 'Nouvelles photos partagées';
 
-    $headers = "From: webmaster@votresite.com"; // Remplacez par votre domaine
-
-    $files = $_FILES['photos'];
+    // Création d'une limite pour séparer les parties du message
     $boundary = md5(time());
 
-    $headers .= "\nMIME-Version: 1.0\n" .
-                "Content-Type: multipart/mixed; boundary=\"{$boundary}\"";
+    // En-têtes de l'email
+    $headers = 'From: webmaster@votresite.com' . "\r\n";
+    $headers .= 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-Type: multipart/mixed; boundary="' . $boundary . '"' . "\r\n";
 
-    $body = "--{$boundary}\n" .
-            "Content-Type: text/plain; charset=\"UTF-8\"\n" .
-            "Content-Transfer-Encoding: 7bit\n\n" .
-            $message . "\n";
+    // Début du message
+    $message = '--' . $boundary . "\r\n";
+    $message .= 'Content-Type: text/plain; charset="utf-8"' . "\r\n";
+    $message .= 'Content-Transfer-Encoding: 7bit' . "\r\n";
+    $message .= "\r\n";
+    $message .= 'Des photos ont été soumises.' . "\r\n";
 
-    for ($i = 0; $i < count($files['name']); $i++) {
-        if ($files['error'][$i] == UPLOAD_ERR_OK) {
-            $fileContent = file_get_contents($files['tmp_name'][$i]);
-            $fileName = $files['name'][$i];
+    // Ajout des fichiers joints
+    if (!empty($_FILES['photos']['name'][0])) {
+        for ($i = 0; $i < count($_FILES['photos']['name']); $i++) {
+            $filePath = $_FILES['photos']['tmp_name'][$i];
+            $fileName = $_FILES['photos']['name'][$i];
+            $fileType = $_FILES['photos']['type'][$i];
+            $fileSize = $_FILES['photos']['size'][$i];
 
-            $body .= "--{$boundary}\n" .
-                    "Content-Type: {$files['type'][$i]}; name=\"{$fileName}\"\n" .
-                    "Content-Disposition: attachment; filename=\"{$fileName}\"\n" .
-                    "Content-Transfer-Encoding: base64\n\n" .
-                    chunk_split(base64_encode($fileContent)) . "\n";
+            // Lire le fichier
+            $fileContent = file_get_contents($filePath);
+            $fileContent = chunk_split(base64_encode($fileContent));
+
+            $message .= '--' . $boundary . "\r\n";
+            $message .= 'Content-Type: ' . $fileType . '; name="' . $fileName . '"' . "\r\n";
+            $message .= 'Content-Transfer-Encoding: base64' . "\r\n";
+            $message .= 'Content-Disposition: attachment; filename="' . $fileName . '"' . "\r\n";
+            $message .= "\r\n";
+            $message .= $fileContent . "\r\n";
         }
     }
 
-    $body .= "--{$boundary}--";
+    // Fin du message
+    $message .= '--' . $boundary . '--';
 
-    if (mail($to, $subject, $body, $headers)) {
-        echo "Email envoyé avec succès.";
+    // Envoi de l'email
+    if (mail($to, $subject, $message, $headers)) {
+        echo 'Email envoyé avec succès';
     } else {
-        echo "Erreur lors de l'envoi de l'email.";
+        http_response_code(500);
+        echo 'Erreur lors de l\'envoi de l\'email';
     }
-} else {
-    echo "Aucune photo sélectionnée.";
 }
 ?>
