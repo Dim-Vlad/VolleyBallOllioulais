@@ -72,14 +72,9 @@ body {
   display: flex;
   justify-content: space-between; /* Espace entre la marque et les liens du menu */
   align-items: center;
-  max-width: 1200px; /* Largeur maximale du menu */
+  max-width: 1500px; /* Largeur maximale du menu */
   margin: 0 auto; /* Centre le conteneur horizontalement */
   padding: 0 5px; /* Ajoute un peu de marge intérieure */
-}
-
-.navbar-logo {
-  height: 60px; /* Ajustez la hauteur selon vos besoins */
-  margin-right: 20px; /* Espace entre le logo et le texte */
 }
 
 /* Marque du menu */
@@ -91,7 +86,12 @@ body {
   font-size: 1.5rem; /* Taille du texte de la marque */
   font-weight: bold; /* Gras pour le texte de la marque */
   font-family: 'Merriweather', serif; /* Police de caractères pour la marque */
-  margin-left: 0; /* Ajustez cette valeur pour déplacer le logo plus à gauche */
+  margin-left: 0; /* Aligne le logo et la marque à gauche */
+}
+
+.navbar-logo {
+  height: 60px; /* Ajustez la hauteur selon vos besoins */
+  margin-right: 10px; /* Espace entre le logo et le texte */
 }
 
 /* Style du bouton menu burger */
@@ -130,6 +130,66 @@ body {
   border-radius: 10px;
   cursor: url('/images/volley-cursor32.png'), auto; /* Spécifie l'image comme curseur et utilise un curseur par défaut si l'image n'est pas disponible */
   transition: color 0.3s; /* Pour ajouter une transition de couleur sur survol */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown :hover{
+  cursor: url('/images/volley-cursor32.png'), auto;
+}
+
+.dropdown button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex; /* Utilisation de flexbox pour aligner le texte et la flèche */
+  align-items: center;
+  font-family: 'Merriweather', serif;
+}
+
+.dropdown button::after {
+  content: "▼"; /* Utilisation d'une flèche vers le bas comme symbole */
+  margin-left: 10px; /* Espace entre le texte et la flèche */
+  font-size: 15px; /* Taille de la flèche */
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--primary-color);
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  color: var(--secondary-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 4px;
+  font-family: 'Merriweather', serif;
+}
+
+.dropdown-content a:hover {
+  background-color: white; /* Couleur de fond au survol */
+  color: var(--secondary-color); /* Couleur du texte au survol */
+  border-radius: 10px;
+  cursor: url('/images/volley-cursor32.png'), auto; /* Spécifie l'image comme curseur et utilise un curseur par défaut si l'image n'est pas disponible */
+  transition: color 0.3s; /* Pour ajouter une transition de couleur sur survol */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 
@@ -225,10 +285,39 @@ body {
 
   .navbar-links a {
     margin: 10px 0; /* Espace entre les liens en mode burger */
+    display: block; /* Assure que chaque lien est en bloc pour occuper toute la largeur */
+  }
+
+  .dropdown {
+    width: 100%; /* Assure que le bouton occupe toute la largeur */
+    text-align: center; /* Centre le texte du bouton */
+  }
+
+  .dropdown button {
+    display: block; /* Assure que le bouton est en bloc */
+    width: 100%; /* Le bouton prend toute la largeur */
+    background-color: var(--primary-color); /* Couleur de fond du bouton */
+    color: var(--secondary-color); /* Couleur du texte */
+    border: none; /* Supprime la bordure */
+    padding: 12px 10px; /* Espacement intérieur du bouton */
+    font-size: 1rem; /* Taille du texte */
+    cursor: pointer; /* Change le curseur au survol */
   }
 
   .dropdown-content {
     position: static; /* Positionne le menu déroulant en mode burger */
+    text-align: center; /* Centre le texte du menu déroulant */
+    display: flex; /* Utilise flex pour centrer les éléments */
+    flex-direction: column; /* Aligne les éléments en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
+    width: 100%; /* Prend toute la largeur disponible pour un centrage parfait */
+  }
+
+  .dropdown-content a {
+    margin: 10px 0; /* Espace entre les liens du menu déroulant */
+    display: block; /* Assure que chaque lien est en bloc */
+    width: 100%; /* Prend toute la largeur disponible */
+    max-width: 200px; /* Largeur maximale pour les liens du menu déroulant */
   }
 
   /* Style de l'overlay */
@@ -252,7 +341,9 @@ body {
     align-items: center;
   }
 
-  .adresse, .liens, .réseaux {
+  .adresse,
+  .liens,
+  .réseaux {
     padding: 10px 0;
     text-align: center;
   }
@@ -260,10 +351,12 @@ body {
   .text-content {
     margin: 0 10px;
     font-size: 14px;
-}
+  }
+
   .logo-club {
     width: 80%;
     height: auto;
     max-width: 600px;
+  }
 }
-}
+
