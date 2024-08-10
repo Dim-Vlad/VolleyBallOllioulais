@@ -58,8 +58,16 @@
 }
 
 .photo-gallery h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.2rem;
 }
 
 .gallery-grid {
@@ -97,7 +105,7 @@
 
 
 .btn {
-    font-family: 'Merriweather', serif;
+    font-family: var(--font-poppins);
     display: inline-block;
     padding: 10px 20px;
     background-color: var(--secondary-color);

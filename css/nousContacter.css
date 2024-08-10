@@ -1,14 +1,16 @@
 /* ---Style formulaire contact--- */
 * {
     box-sizing: border-box;
-    font-family: 'Merriweather', serif;
+    font-family: var(--font-poppins);    
 }
 
 .content-container {
     margin: 0;
     padding: 2% 15% 10% 15%;
     max-height: 100%;
-    box-sizing: border-box;  
+    box-sizing: border-box;
+    font-family: var(--font-poppins);
+    font-size: 1.2rem;
 }
 
 input[type=text], input[type=email], select, textarea {
@@ -17,6 +19,7 @@ input[type=text], input[type=email], select, textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+    font-size: 1rem;
 }
 
 label {
@@ -34,6 +37,7 @@ input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
     float: right;
+    font-size: 1.2rem;
 }
 
 input[type=submit]:hover {
@@ -117,6 +121,7 @@ input[type=submit]:hover {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: bold;
+    font-family: var(--font-poppins);
 }
 
 .addresses a:hover {

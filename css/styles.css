@@ -3,6 +3,7 @@
   --secondary-color: #063E0B;
   --color-green: #85B683;
   --bg-dark: #223224;
+  --font-poppins: font-family: 'Poppins', sans-serif;
 }
 
 .root-colors {
@@ -21,7 +22,7 @@
 
 
 body {
-  font-family: 'Merriweather', serif;
+  font-family: var(--font-poppins);
   margin: 0;
   padding: 0;
   background-color: #faf8f8;
@@ -53,6 +54,7 @@ body {
 .text-content {
   flex: 1; /* Prend l'espace restant à côté du logo */
   color: var(--bg-dark);
+  font-size: 1.5rem;
 }
 
 /* Styles pour le menu */
@@ -61,6 +63,7 @@ body {
   padding: 10px;
   position: fixed; /* Fixe le menu en haut de la page */
   top: 0;
+  font-size: 1.2rem;
   left: 0; /* Assure que le menu commence au bord gauche de la fenêtre */
   width: 100%; /* Le menu occupe toute la largeur de l'écran */
   z-index: 1010; /* Assure que le menu est au-dessus des autres éléments */
@@ -83,9 +86,9 @@ body {
   align-items: center; /* Centre verticalement le logo et le texte */
   color: white; /* Couleur du texte de la marque */
   text-decoration: none; /* Supprime le soulignement des liens */
-  font-size: 1.5rem; /* Taille du texte de la marque */
+  font-size: 1.9rem; /* Taille du texte de la marque */
   font-weight: bold; /* Gras pour le texte de la marque */
-  font-family: 'Merriweather', serif; /* Police de caractères pour la marque */
+  font-family: var(--font-poppins); /* Police de caractères pour la marque */
   margin-left: 0; /* Aligne le logo et la marque à gauche */
 }
 
@@ -120,7 +123,7 @@ body {
   color: var(--secondary-color); /* Couleur des liens du menu */
   text-decoration: none; /* Supprime le soulignement des liens */
   padding: 12px 10px; /* Espace intérieur des liens */
-  font-family: 'Merriweather', serif;
+  font-family: var(--font-poppins);
 }
 
 /* Effet au survol des liens du menu */
@@ -137,21 +140,25 @@ body {
   display: inline-block;
 }
 
-.dropdown :hover{
-  cursor: url('/images/volley-cursor32.png'), auto;
-}
-
 .dropdown button {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: #063E0B;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 1.2rem;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 10px;
   display: flex; /* Utilisation de flexbox pour aligner le texte et la flèche */
   align-items: center;
-  font-family: 'Merriweather', serif;
+  font-family: var(--font-poppins);  
+}
+
+.dropdown button:hover {
+  background-color: white; /* Couleur de fond au survol */
+  color: var(--secondary-color); /* Couleur du texte au survol */
+  border-radius: 10px;
+  cursor: url('/images/volley-cursor32.png'), auto; /* Spécifie l'image comme curseur et utilise un curseur par défaut si l'image n'est pas disponible */
+  transition: color 0.3s; /* Pour ajouter une transition de couleur sur survol */
 }
 
 .dropdown button::after {
@@ -168,7 +175,7 @@ body {
   min-width: 160px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 .dropdown-content a {
@@ -177,7 +184,7 @@ body {
   text-decoration: none;
   display: block;
   border-radius: 4px;
-  font-family: 'Merriweather', serif;
+  font-family: var(--font-poppins);
 }
 
 .dropdown-content a:hover {
@@ -200,6 +207,8 @@ body {
   text-align: center;
   padding: 20px 0;
   width: 100%;
+  font-size: 1.2rem;
+  font-family: var(--font-poppins);
 }
 
 .footer-content {
@@ -290,7 +299,7 @@ body {
 
   .dropdown {
     width: 100%; /* Assure que le bouton occupe toute la largeur */
-    text-align: center; /* Centre le texte du bouton */
+    text-align: center; /* Centre le texte du bouton */    
   }
 
   .dropdown button {
@@ -300,7 +309,7 @@ body {
     color: var(--secondary-color); /* Couleur du texte */
     border: none; /* Supprime la bordure */
     padding: 12px 10px; /* Espacement intérieur du bouton */
-    font-size: 1rem; /* Taille du texte */
+    font-size: 1.2rem; /* Taille du texte */
     cursor: pointer; /* Change le curseur au survol */
   }
 
@@ -313,12 +322,23 @@ body {
     width: 100%; /* Prend toute la largeur disponible pour un centrage parfait */
   }
 
+  .dropdown-content a:hover {
+    background-color: white; /* Couleur de fond au survol */
+    color: var(--secondary-color); /* Couleur du texte au survol */
+    border-radius: 10px;
+    transition: color 0.3s; /* Pour ajouter une transition de couleur sur survol */
+    font-size: 1.2rem;
+  }
+
   .dropdown-content a {
     margin: 10px 0; /* Espace entre les liens du menu déroulant */
-    display: block; /* Assure que chaque lien est en bloc */
+    display: flex; /* Assure que chaque lien est en bloc */
+    flex-direction: column; /* Aligne les éléments en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
     width: 100%; /* Prend toute la largeur disponible */
     max-width: 200px; /* Largeur maximale pour les liens du menu déroulant */
   }
+
 
   /* Style de l'overlay */
   .overlay {
