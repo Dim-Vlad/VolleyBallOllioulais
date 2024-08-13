@@ -9,7 +9,7 @@
 }
 
 .banner h2 {
-    font-family: var(--font-poppins);
+    font-family: Poppins, sans-serif;
     color: var(--bg-dark);
     font-size: 2.5rem;
     font-weight: bold;

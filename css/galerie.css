@@ -105,7 +105,7 @@ p {
 
 
 .btn {
-    font-family: var(--font-poppins);
+    font-family: Poppins, sans-serif;
     display: inline-block;
     padding: 10px 20px;
     background-color: var(--secondary-color);

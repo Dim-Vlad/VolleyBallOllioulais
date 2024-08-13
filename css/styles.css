@@ -22,7 +22,7 @@
 
 
 body {
-  font-family: var(--font-poppins);
+  font-family: Poppins, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #faf8f8;
@@ -88,7 +88,7 @@ body {
   text-decoration: none; /* Supprime le soulignement des liens */
   font-size: 1.9rem; /* Taille du texte de la marque */
   font-weight: bold; /* Gras pour le texte de la marque */
-  font-family: var(--font-poppins); /* Police de caractères pour la marque */
+  font-family: Poppins, sans-serif; /* Police de caractères pour la marque */
   margin-left: 0; /* Aligne le logo et la marque à gauche */
 }
 
@@ -123,7 +123,7 @@ body {
   color: var(--secondary-color); /* Couleur des liens du menu */
   text-decoration: none; /* Supprime le soulignement des liens */
   padding: 12px 10px; /* Espace intérieur des liens */
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Effet au survol des liens du menu */
@@ -150,7 +150,7 @@ body {
   border-radius: 10px;
   display: flex; /* Utilisation de flexbox pour aligner le texte et la flèche */
   align-items: center;
-  font-family: var(--font-poppins);  
+  font-family: Poppins, sans-serif;  
 }
 
 .dropdown button:hover {
@@ -184,7 +184,7 @@ body {
   text-decoration: none;
   display: block;
   border-radius: 4px;
-  font-family: var(--font-poppins);
+  font-family: Poppins, sans-serif;
 }
 
 .dropdown-content a:hover {
@@ -208,7 +208,7 @@ body {
   padding: 20px 0;
   width: 100%;
   font-size: 1.2rem;
-  font-family: var(--font-poppins);
+  font-family: Poppins, sans-serif;
 }
 
 .footer-content {
