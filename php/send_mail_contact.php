@@ -3,9 +3,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $to = 'dimitrigarrigues@gmail.com'; // Remplacez par votre email
     $subject = 'Nouveau message de contact';
     $message = 'Nom: ' . $_POST['lastname'] . "\n" .
-            'Prénom: ' . $_POST['firstname'] . "\n" .
-            'E-mail: ' . $_POST['mail'] . "\n\n" .
-            'Message: ' . $_POST['subject'];
+                'Prénom: ' . $_POST['firstname'] . "\n" .
+                'E-mail: ' . $_POST['mail'] . "\n\n" .
+                'Objet: ' . $_POST['objet'] . "\n" .
+                'Message: ' . $_POST['subject'];
     $headers = 'From: webmaster@votresite.com';
 
     if (mail($to, $subject, $message, $headers)) {
