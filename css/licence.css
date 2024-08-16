@@ -1,7 +1,7 @@
 .container {
     display: flex;
     justify-content: space-between;
-    gap: 20px; /* Ajoute un espacement entre les deux blocs */
+    gap: 20px;
     margin: 20px auto;
     padding: 20px;
     max-width: 1200px;
@@ -9,7 +9,7 @@
 }
 
 .block {
-    width: 48%; /* Chaque bloc prend environ la moitié de l'espace disponible */
+    width: 48%;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: var(--primary-color);
@@ -59,16 +59,15 @@
     background-color: var(--bg-dark);
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     .container {
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Assure l'espacement vertical pour les écrans plus petits */
+    gap: 20px;
     }
 
     .block {
     width: 100%;
-    margin-bottom: 0; /* Supprime la marge inutile */
+    margin-bottom: 0;
     }
 }

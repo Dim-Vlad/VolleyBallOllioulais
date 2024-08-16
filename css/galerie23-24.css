@@ -1,8 +1,8 @@
 /* Styles pour le carrousel */
 .carousel {
     position: relative;
-    max-width: 60%; /* Largeur maximale du carrousel */
-    margin: 20px auto; /* Centre le carrousel horizontalement */
+    max-width: 60%;
+    margin: 20px auto;
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -10,19 +10,19 @@
 
 .carousel-inner {
     display: flex;
-    height: 400px; /* Hauteur fixe pour le carrousel */
+    height: 400px;
 }
 
 .carousel-item {
-    min-width: 100%; /* Chaque item prend toute la largeur du carrousel */
-    height: 100%; /* Prend toute la hauteur disponible */
-    display: none; /* Masque par défaut */
+    min-width: 100%;
+    height: 100%;
+    display: none;
 }
 
 .carousel-item img {
     width: 100%;
-    height: 100%; /* Prend toute la hauteur du carrousel */
-    object-fit: cover; /* Coupe l'image pour qu'elle remplisse le conteneur */
+    height: 100%;
+    object-fit: cover;
 }
 
 .carousel-control-prev, .carousel-control-next {
@@ -79,7 +79,7 @@ p {
 }
 
 .gallery-item {
-    width: 150px; /* Taille fixe pour les images */
+    width: 150px;
     height: 150px;
     overflow: hidden;
     border-radius: 20px;
@@ -90,26 +90,25 @@ p {
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Coupe l'image pour qu'elle remplisse le conteneur */
-    cursor: pointer; /* Ajoute un pointeur pour indiquer que l'image est cliquable */
+    object-fit: cover;
+    cursor: pointer;
 }
 
 .gallery-item a {
     text-decoration: none;
-    color: inherit; /* Garde la couleur du texte */
-    display: block; /* Permet de cliquer sur tout le bloc */
+    color: inherit;
+    display: block;
 }
 
 .gallery-item a:hover p, .gallery-item a:hover img {
-    opacity: 0.5; /* Ajoute un effet visuel au survol */
+    opacity: 0.5;
 }
 
 
-/* Requête média pour les appareils mobiles */
 @media (max-width: 768px) {
     .btn {
-        width: 80%; /* Pour que les boutons s'étendent sur toute la largeur */
-        margin: 15px 0; /* Augmente l'espacement vertical pour les mobiles */
+        width: 80%;
+        margin: 15px 0;
     }
 }
 

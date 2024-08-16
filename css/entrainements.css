@@ -23,15 +23,15 @@
     text-align: center;
     font-size: 14px;
 }
-.training-table th { /* En-tête du tableau */
+.training-table th {
     background-color: #c9c9c9;
     font-weight: bold;
 }
 .training-table tr:nth-child(even) { 
-    background-color: #f9f9f9; /* Couleur de fond une ligne sur deux */
+    background-color: #f9f9f9;
 }
 .training-table tr:hover td:not(.no-hover) {
-    background-color: var(--primary-color); /* Couleur de fond ligne en survol */
+    background-color: var(--primary-color);
 }
 .training-table tr:hover .day {
     color: var(--bg-dark);

@@ -17,15 +17,15 @@ body {
 .level {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Permet d'emballer les éléments */
+    flex-wrap: wrap;
     margin: 20px 0;
 }
 
 .position {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    width: 150px; /* Largeur fixe */
-    height: 200px; /* Hauteur fixe */
+    width: 150px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +34,7 @@ body {
     border-radius: 10px;
     border-style: double;
     border-color: var(--bg-dark);
-    margin: 10px; /* Espacement autour des boîtes */
+    margin: 10px;
     font-weight: bold;
     text-align: center;
     transition: transform 0.5s;
@@ -52,17 +52,17 @@ body {
 .position img {
     width: 80px;
     height: 80px;
-    border-radius: 50%; /* Forme circulaire */
-    object-fit: cover; /* Garde les proportions */
+    border-radius: 50%;
+    object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
 }
 
 .separator {
-    width: 80%; /* Largeur de la ligne */
-    max-width: 600px; /* Largeur maximale pour le centrage */
-    border-top: 2px solid #ccc; /* Bordure en haut pour une ligne horizontale */
-    margin: 20px auto; /* Marges pour centrer la ligne */
+    width: 80%; 
+    max-width: 600px;
+    border-top: 2px solid #ccc;
+    margin: 20px auto;
 }
 
 .trombinoscope h2 {
@@ -109,7 +109,7 @@ body {
 
 @media screen and (max-width: 768px) {
     .button-container {
-        grid-template-columns: repeat(2, 1fr); /* Deux colonnes sur les écrans moyens */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -125,6 +125,6 @@ body {
 
 @media screen and (max-width: 480px) {
     .button-container {
-        grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+        grid-template-columns: 1fr;
     }
 }

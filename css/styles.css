@@ -27,11 +27,11 @@ body {
   padding: 0;
   background-color: #faf8f8;
   text-align: center;
-  background-image: url('/images/ImageBackGround.jpg'); /* Remplacez par le chemin de votre image */
-  background-size: cover; /* Assure que l'image couvre toute la surface */
-  background-position: center; /* Centre l'image */
-  background-attachment: fixed; /* Rend l'image de fond fixe */
-  background-repeat: no-repeat; /* Évite que l'image se répète */
+  background-image: url('/images/ImageBackGround.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 /* Logo VBO*/
@@ -50,89 +50,85 @@ body {
   display: block;
 }
 
-/* Style pour le conteneur de texte */
 .text-content {
-  flex: 1; /* Prend l'espace restant à côté du logo */
+  flex: 1;
   color: var(--bg-dark);
   font-size: 1.5rem;
 }
 
 /* Styles pour le menu */
 .navbar {
-  background-color: var(--primary-color); /* Couleur de fond du menu */
+  background-color: var(--primary-color);
   padding: 10px;
-  position: fixed; /* Fixe le menu en haut de la page */
+  position: fixed;
   top: 0;
   font-size: 1.2rem;
-  left: 0; /* Assure que le menu commence au bord gauche de la fenêtre */
-  width: 100%; /* Le menu occupe toute la largeur de l'écran */
-  z-index: 1010; /* Assure que le menu est au-dessus des autres éléments */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre sous le menu pour un effet de profondeur */
+  left: 0;
+  width: 100%;
+  z-index: 1010;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Conteneur du menu */
 .navbar-container-menu {
   display: flex;
-  justify-content: space-between; /* Espace entre la marque et les liens du menu */
+  justify-content: space-between;
   align-items: center;
-  max-width: 1500px; /* Largeur maximale du menu */
-  margin: 0 auto; /* Centre le conteneur horizontalement */
-  padding: 0 5px; /* Ajoute un peu de marge intérieure */
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 5px;
 }
 
 /* Marque du menu */
 .navbar-brand {
-  display: flex; /* Affiche le logo et le texte en ligne */
-  align-items: center; /* Centre verticalement le logo et le texte */
-  color: white; /* Couleur du texte de la marque */
-  text-decoration: none; /* Supprime le soulignement des liens */
-  font-size: 1.9rem; /* Taille du texte de la marque */
-  font-weight: bold; /* Gras pour le texte de la marque */
-  font-family: Poppins, sans-serif; /* Police de caractères pour la marque */
-  margin-left: 0; /* Aligne le logo et la marque à gauche */
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 1.9rem;
+  font-weight: bold;
+  font-family: Poppins, sans-serif;
+  margin-left: 0;
 }
 
 .navbar-logo {
-  height: 60px; /* Ajustez la hauteur selon vos besoins */
-  margin-right: 10px; /* Espace entre le logo et le texte */
+  height: 60px;
+  margin-right: 10px;
 }
 
 /* Style du bouton menu burger */
 .navbar-toggler {
-  background: none; /* Aucune couleur de fond pour le bouton burger */
-  border: none; /* Supprime la bordure du bouton burger */
-  color: white; /* Couleur du texte du bouton burger */
-  font-size: 1.5rem; /* Taille du texte du bouton burger */
-  cursor: pointer; /* Changement du curseur au survol */
-  display: none; /* Cache le bouton burger par défaut sur les grands écrans */
-  position: relative; /* Permet de positionner le bouton burger avec `margin` */
-  margin-left: auto; /* Pousse le bouton burger vers la droite */
-  margin-right: 20px; /* Ajoute une marge à droite du bouton burger */
-  width: 30px; /* Largeur du bouton burger */
-  height: 25px; /* Hauteur du bouton burger */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  position: relative;
+  margin-left: auto;
+  margin-right: 20px;
+  width: 30px;
+  height: 25px;
 }
 
-/* Style des liens du menu */
 .navbar-links {
-  display: flex; /* Affiche les liens en ligne */
-  gap: 10px; /* Espace entre les liens */
-  margin-right: 30px; /* Ajoute une marge à droite des liens du menu */
+  display: flex;
+  gap: 10px;
+  margin-right: 30px;
 }
 
 .navbar-links a {
-  color: var(--secondary-color); /* Couleur des liens du menu */
-  text-decoration: none; /* Supprime le soulignement des liens */
-  padding: 12px 10px; /* Espace intérieur des liens */
+  color: var(--secondary-color);
+  text-decoration: none;
+  padding: 12px 10px;
   font-family: 'Poppins', sans-serif;
 }
 
-/* Effet au survol des liens du menu */
 .navbar-links a:hover {
-  background-color: white; /* Couleur de fond au survol */
-  color: var(--secondary-color); /* Couleur du texte au survol */
+  background-color: white;
+  color: var(--secondary-color);
   border-radius: 10px;
-  cursor: url('/images/volley-cursor32.png'), auto; /* Spécifie l'image comme curseur et utilise un curseur par défaut si l'image n'est pas disponible */
-  transition: color 0.3s; /* Pour ajouter une transition de couleur sur survol */
+  cursor: url('/images/volley-cursor32.png'), auto;
+  transition: color 0.3s;
 }
 
 .dropdown {
@@ -148,23 +144,23 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  display: flex; /* Utilisation de flexbox pour aligner le texte et la flèche */
+  display: flex;
   align-items: center;
   font-family: Poppins, sans-serif;  
 }
 
 .dropdown button:hover {
-  background-color: white; /* Couleur de fond au survol */
-  color: var(--secondary-color); /* Couleur du texte au survol */
+  background-color: white;
+  color: var(--secondary-color);
   border-radius: 10px;
-  cursor: url('/images/volley-cursor32.png'), auto; /* Spécifie l'image comme curseur et utilise un curseur par défaut si l'image n'est pas disponible */
-  transition: color 0.3s; /* Pour ajouter une transition de couleur sur survol */
+  cursor: url('/images/volley-cursor32.png'), auto;
+  transition: color 0.3s;
 }
 
 .dropdown button::after {
-  content: "▼"; /* Utilisation d'une flèche vers le bas comme symbole */
-  margin-left: 10px; /* Espace entre le texte et la flèche */
-  font-size: 15px; /* Taille de la flèche */
+  content: "▼";
+  margin-left: 10px;
+  font-size: 15px;
 
 }
 
@@ -188,11 +184,11 @@ body {
 }
 
 .dropdown-content a:hover {
-  background-color: white; /* Couleur de fond au survol */
-  color: var(--secondary-color); /* Couleur du texte au survol */
+  background-color: white;
+  color: var(--secondary-color);
   border-radius: 10px;
-  cursor: url('/images/volley-cursor32.png'), auto; /* Spécifie l'image comme curseur et utilise un curseur par défaut si l'image n'est pas disponible */
-  transition: color 0.3s; /* Pour ajouter une transition de couleur sur survol */
+  cursor: url('/images/volley-cursor32.png'), auto;
+  transition: color 0.3s;
 }
 
 .dropdown:hover .dropdown-content {
@@ -265,95 +261,78 @@ body {
 
 @media (max-width: 768px) {
   .navbar-toggler {
-    display: block; /* Affiche le bouton burger sur les petits écrans */
+    display: block;
   }
 
   .navbar-links {
-    display: none; /* Masque les liens du menu par défaut sur les petits écrans */
-    flex-direction: column; /* Aligne les liens en colonne */
-    width: 70%; /* Largeur du menu burger */
-    max-width: 300px; /* Largeur maximale du menu burger */
-    text-align: center; /* Centre les textes des liens */
-    margin: 0; /* Supprime les marges */
-    position: fixed; /* Fixe le menu burger */
-    top: 0; /* Positionne le menu en haut */
-    left: 0; /* Aligne le menu à gauche */
-    background-color: var(--primary-color); /* Couleur de fond du menu burger */
-    height: 100%; /* Hauteur du menu burger */
-    z-index: 1001; /* Assure que le menu est au-dessus de tout */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre sous le menu pour un effet de profondeur */
-    transform: translateX(-100%); /* Masque le menu en le déplaçant à gauche */
-    transition: transform 0.3s ease-in-out; /* Animation pour l'ouverture et la fermeture */
-    border-radius: 20px; /* Bords arrondis */
+    display: none;
+    flex-direction: column;
+    width: 70%;
+    max-width: 300px;
+    text-align: center;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    height: 100%;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 20px;
   }
 
   .navbar-links.show {
-    display: flex; /* Affiche les liens du menu en mode burger */
-    transform: translateX(0); /* Affiche le menu en le déplaçant vers la droite */
+    display: flex;
+    transform: translateX(0);
   }
 
   .navbar-links a {
-    margin: 10px 0; /* Espace entre les liens en mode burger */
-    display: block; /* Assure que chaque lien est en bloc pour occuper toute la largeur */
+    margin: 10px 0;
+    display: block;
   }
 
   .dropdown {
-    width: 100%; /* Assure que le bouton occupe toute la largeur */
-    text-align: center; /* Centre le texte du bouton */    
+    width: 100%;
+    text-align: center; 
   }
 
   .dropdown button {
-    display: block; /* Assure que le bouton est en bloc */
-    width: 100%; /* Le bouton prend toute la largeur */
-    background-color: var(--primary-color); /* Couleur de fond du bouton */
-    color: var(--secondary-color); /* Couleur du texte */
-    border: none; /* Supprime la bordure */
-    padding: 12px 10px; /* Espacement intérieur du bouton */
-    font-size: 1.2rem; /* Taille du texte */
-    cursor: pointer; /* Change le curseur au survol */
+    display: block;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 12px 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
   }
 
   .dropdown-content {
-    position: static; /* Positionne le menu déroulant en mode burger */
-    text-align: center; /* Centre le texte du menu déroulant */
-    display: flex; /* Utilise flex pour centrer les éléments */
-    flex-direction: column; /* Aligne les éléments en colonne */
-    align-items: center; /* Centre les éléments horizontalement */
-    width: 100%; /* Prend toute la largeur disponible pour un centrage parfait */
+    position: static;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   .dropdown-content a:hover {
-    background-color: white; /* Couleur de fond au survol */
-    color: var(--secondary-color); /* Couleur du texte au survol */
+    background-color: white;
+    color: var(--secondary-color);
     border-radius: 10px;
-    transition: color 0.3s; /* Pour ajouter une transition de couleur sur survol */
+    transition: color 0.3s;
     font-size: 1.2rem;
   }
 
   .dropdown-content a {
-    margin: 10px 0; /* Espace entre les liens du menu déroulant */
-    display: flex; /* Assure que chaque lien est en bloc */
-    flex-direction: column; /* Aligne les éléments en colonne */
-    align-items: center; /* Centre les éléments horizontalement */
-    width: 100%; /* Prend toute la largeur disponible */
-    max-width: 200px; /* Largeur maximale pour les liens du menu déroulant */
-  }
-
-
-  /* Style de l'overlay */
-  .overlay {
-    display: none; /* Masque l'overlay par défaut */
-    position: fixed; /* Fixe l'overlay */
-    top: 0;
-    left: 0;
-    width: 100vw; /* Largeur de l'overlay */
-    height: 100vh; /* Hauteur de l'overlay */
-    background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond semi-transparente */
-    z-index: 1000; /* Assure que l'overlay est au-dessus du contenu */
-  }
-
-  .overlay.show {
-    display: block; /* Affiche l'overlay lorsqu'il est nécessaire */
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 200px;
   }
 
   .footer-content {
