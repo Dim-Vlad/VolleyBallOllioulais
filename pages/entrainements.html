@@ -25,6 +25,7 @@
         </div>
     </div>
 
+<!-- Tableau Entrainements -->
     <div class="container">
         <div class="training-table-container">
             <table class="training-table">
@@ -134,13 +135,13 @@
                 </tbody>
             </table>
         </div>
-
+<!-- Déterminer catégorie -->
         <div class="form-container">
             <h2>Déterminer la Catégorie</h2>
             <form id="category-form">
                 <label for="birth-year">Année de Naissance:</label>
                 <select id="birth-year" name="birth-year" required>
-                    <option value="">Choisir l'année de naissance</option>
+                    <option value="" disabled selected>Choisir l'année de naissance</option>
                     <option value="2021">2021</option>
                     <option value="2020">2020</option>
                     <option value="2019">2019</option>
@@ -163,7 +164,7 @@
                 </select>
                 <label for="gender">Genre:</label>
                 <select id="gender" name="gender" required>
-                    <option value="">Choisir masculin ou féminin</option>
+                    <option value="" disabled selected>Choisir masculin ou féminin</option>
                     <option value="male">Masculin</option>
                     <option value="female">Féminin</option>
                 </select>
@@ -241,9 +242,7 @@ document.getElementById('result').textContent = `Catégorie: ${category}, Horair
 
 loadHTML('../commun/footer.html', 'footer');
 
-// Gestionnaire d'événements pour le bouton de contact
 document.getElementById('contact-button').addEventListener('click', function() {
-    // Rediriger vers la page "nousContacter.html"
     window.location.href = 'nousContacter.html';
 });
 </script>
