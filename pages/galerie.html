@@ -27,8 +27,9 @@
     <div class="upload-container">
         <form id="photo-form" enctype="multipart/form-data" method="post" action="/php/send_mail_galerie.php">
             <input type="file" id="photo-upload" name="photos[]" accept="image/*" multiple style="display: none;">
-            <label for="photo-upload" class="btn">Sélectionner des Photos</label>
-            <input type="submit" value="Envoyer par Email" class="btn">
+            <label for="photo-upload" class="btn">1 . Sélectionner des Photos</label>
+            <p style="color: var(--secondary-color);">-</p>
+            <input type="submit" value="2 . Envoyer" class="btn">
         </form>
         <div id="thumbnails" class="thumbnail-container"></div>
     </div>
