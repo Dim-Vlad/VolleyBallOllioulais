@@ -259,7 +259,7 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media screen and (max-width: 1090px) {
   .navbar-toggler {
     display: block;
   }
@@ -355,7 +355,7 @@ body {
   .logo-club {
     width: 80%;
     height: auto;
-    max-width: 600px;
+    max-width: 200px;
   }
 }
 
