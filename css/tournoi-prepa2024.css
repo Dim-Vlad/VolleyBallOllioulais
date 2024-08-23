@@ -1,0 +1,37 @@
+.tableau iframe {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+@media screen and (max-width: 960px) {
+.tableau {
+    position: relative;
+    width: 90%;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+    touch-action: pan-x pan-y; /* Permet le défilement sur mobile */
+    margin: 0 auto;
+}
+
+.tableau iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 100%;
+    transform-origin: 0 0; /* Fixe le point d'origine du zoom en haut à gauche */
+}
+
+/* Désactiver le zoom automatique sur Safari iOS */
+html {
+    -webkit-text-size-adjust: 100%; 
+}
+
+/* Permet le zoom avec les doigts sur les appareils mobiles */
+iframe {
+    max-width: 100%;
+    -ms-touch-action: manipulation; /* IE */
+    touch-action: manipulation; /* Chrome, Firefox, Edge */
+}
+}
