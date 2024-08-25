@@ -1,37 +1,47 @@
+.tableau {
+    margin-bottom: 50px;
+}
+
 .tableau iframe {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    border: 2px solid black;
+    width: 650px;
+    height: 1600px;
 }
 
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 720px) {
 .tableau {
     position: relative;
     width: 90%;
-    padding-bottom: 75%;
-    height: 0;
+    height: 1250px;
     overflow: hidden;
     touch-action: pan-x pan-y; /* Permet le défilement sur mobile */
-    margin: 0 auto;
-}
+    margin: 0 auto 50px;    
+    }
 
 .tableau iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 95%;
-    height: 100%;
-    transform-origin: 0 0; /* Fixe le point d'origine du zoom en haut à gauche */
+    height: 95%;
+    zoom: 75%;
+    }
 }
 
-/* Désactiver le zoom automatique sur Safari iOS */
-html {
-    -webkit-text-size-adjust: 100%; 
-}
 
-/* Permet le zoom avec les doigts sur les appareils mobiles */
-iframe {
-    max-width: 100%;
-    -ms-touch-action: manipulation; /* IE */
-    touch-action: manipulation; /* Chrome, Firefox, Edge */
-}
+@media screen and (max-width: 550px) {
+    .tableau {
+        position: relative;
+        width: 90%;
+        height: 870px;
+        overflow: hidden;
+        touch-action: pan-x pan-y; /* Permet le défilement sur mobile */
+        margin: 0 auto 10px;    
+    }
+    
+    .tableau iframe {
+        width: 95%;
+        height: 95%;
+        zoom: 50%;
+    }    
 }
