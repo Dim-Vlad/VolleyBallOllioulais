@@ -44,5 +44,5 @@ function loadHTML(url, elementId) {
 }
 
 // Chargement des contenus HTML
-loadHTML('../commun/menu.html', 'menu');
-loadHTML('../commun/footer.html', 'footer');
+loadHTML('/commun/menu.html', 'menu');
+loadHTML('/commun/footer.html', 'footer');
