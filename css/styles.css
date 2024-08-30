@@ -139,15 +139,13 @@ body {
 
 .dropdown button {
   background-color: var(--primary-color);
-  color: #063E0B;
-  padding: 10px 20px;
+  color: var(--secondary-color);
+  padding: 12px 10px;
   font-size: 1.2rem;
   border: none;
-  cursor: pointer;
-  border-radius: 10px;
   display: flex;
   align-items: center;
-  font-family: Poppins, sans-serif;  
+  font-family: 'Poppins', sans-serif;  
 }
 
 .dropdown button:hover {

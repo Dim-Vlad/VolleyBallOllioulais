@@ -32,14 +32,9 @@
 }
 
 .item {
-    --rX: 0deg;
-    --rY: 0deg;
-    --bX: 50%;
-    --bY: 80%;
     width: 100%;
     background-color: var(--primary-color);
     border-radius: 20px;
-    transform: rotateX(var(--rX)) rotateY(var(--rY));
     transition: 0.2s;
     padding: 20px;
     box-shadow: 0 30px 20px #5555;
