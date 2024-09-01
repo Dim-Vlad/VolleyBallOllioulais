@@ -49,28 +49,47 @@
 }
 
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
-    z-index: 1000; 
+    z-index: 1010;
     left: 0;
-    top: 50px;  
+    top: 0;  /* Aligner en haut de l'écran */
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
     overflow: auto;
-    background-color: rgba(0,0,0,0.4); 
-    padding-top: 20px;
     font-size: 1.2rem;
+    opacity: 0;  /* Commence invisible */
+    transition: opacity 0.3s ease;
+    justify-content: center;  /* Centrer horizontalement */
+    align-items: flex-start;  /* Aligner en haut */
+    padding-top: 20px;  /* Ajouter un espace entre le haut de l'écran et la modale */
 }
 
 .modal-content {
     background-color: var(--primary-color);
-    margin: 5% auto; 
+    margin: 0 auto;  /* Supprimer la marge verticale automatique */
     padding: 20px;
     border: 1px solid #888;
-    width: 90%; 
+    width: 90%;
     max-width: 600px;
     text-align: center;
     border-radius: 20px;
+    transform: scale(0.7);  /* Commence réduit */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    position: relative;
+}
+
+
+/* Effet d'animation lors de l'ouverture */
+.modal.show {
+    opacity: 1;
+}
+
+.modal.show .modal-content {
+    transform: scale(1); /* Grandit jusqu'à sa taille normale */
+    opacity: 1;
 }
 
 .close {
