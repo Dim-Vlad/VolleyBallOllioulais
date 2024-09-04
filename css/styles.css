@@ -258,7 +258,44 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  .navbar-links,
+  .text-content,
+  .dropdown button {
+    font-size: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .logo-club{
+    width: 75%;
+    height: auto;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 890px) {
+  .navbar-links,
+  .navbar-brand,
+  .text-content,
+  .dropdown button {
+    font-size: 1rem;
+  }
+
+  .logo-club{
+    width: 75%;
+    height: auto;
+    max-width: 200px;
+  }
+
+  .navbar-logo{
+    display: none;
+  }
+}
+
+@media (max-width: 790px) {
   .navbar-links {
     display: none;
     flex-direction: column;
@@ -278,8 +315,14 @@ body {
     border-radius: 20px;
   }
 
+  .navbar-brand{
+    font-size: 1.5rem;
+  }
+
   .navbar-toggler {
     display: block;
+    margin-bottom: 20px;
+    zoom: 150%;
   }
 
   .navbar-links.show {
@@ -288,7 +331,7 @@ body {
   }
 
   .navbar-links a {
-    margin: 10px 0;
+    font-size: 1.2rem;
     display: block;
     padding: 12px 10px;
   }
