@@ -99,7 +99,7 @@ body {
     display: inline-block;
     padding: 10px 20px;
     margin: 0 50px;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -109,9 +109,18 @@ body {
 }
 
 .btn:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     transform: translateY(-2px);
 }
+
+.devenir,
+.dossier {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--bg-dark);
+}
+
 
 @media screen and (max-width: 768px) {
     .button-container {
