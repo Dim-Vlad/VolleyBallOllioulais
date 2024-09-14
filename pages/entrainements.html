@@ -43,8 +43,8 @@
                     <tr>
                         <td class="day" rowspan="2">Lundi </br>La Cordeille</td>
                         <td>18h00 - 19h30</td>
-                        <td>M15 Féminin</br>Nicolas P.</td>
-                        <td>.</br></td>
+                        <td>M15 Féminin</br>Nicolas</td>
+                        <td>.</td>
                         <td>.</td>                        
                     </tr>
                     <tr>
@@ -55,14 +55,14 @@
                     <tr>
                         <td class="day" rowspan="3">Mardi</td>
                         <td>17h30 - 18h45</td>
-                        <td>M13 Masculin</br>Nada</td>
-                        <td>.</br></td>
+                        <td>M13 Masculin</br>.</td>
+                        <td>.</td>
                         <td>M15 Masculin</br>Gil</td>
                     </tr>
                     <tr>
                         <td>18h45 - 20h15</td>
-                        <td>M21 Masculin</br>Adrien N.</td>
-                        <td>.</br></td>
+                        <td>M21 Masculin</br>Adrien</td>
+                        <td>.</td>
                         <td>N3 Masculin</br>Cléa</td>
                     </tr>
                     <tr>
@@ -83,13 +83,13 @@
                     <tr>
                         <td>18h45 - 20h15</td>
                         <td>M18 F Débutante</br>Maxime</td>
-                        <td>Départ Féminin</br>Théo</td>
+                        <td>Départ Féminin</br>Jessy</td>
                         <td>M18 Féminin</br>Fabrice</td>
                     </tr>
                     <tr>
                         <td>20h15 - 22h15</td>
                         <td>Départ Masculin</br>Maxime</td>
-                        <td>.</br></td>
+                        <td>.</td>
                         <td>Pré-Nationale Masculin</br>Dimitri</td>
                     </tr>
                     <tr>
@@ -99,14 +99,14 @@
                     <tr>
                         <td class="day" rowspan="3">Jeudi</td>
                         <td>17h30 - 18h45</td>
-                        <td>M13 Masculin</br>Nada</td>
+                        <td>M13 Masculin</br>.</td>
                         <td>M15 Masculin</br>Gil</td>
-                        <td>M15 Féminin</br>Nicolas P.</td>
+                        <td>M15 Féminin</br>Nicolas</td>
                     </tr>
                     <tr>
                         <td>18h45 - 20h15</td>                        
-                        <td>M21 Masculin</br>Adrien N.</td>
-                        <td>.</br></td>
+                        <td>M21 Masculin</br>Adrien</td>
+                        <td>.</td>
                         <td>Pré-Nationale Féminin</br>Anne-Sophie</td>
                     </tr>
                     <tr>
@@ -117,19 +117,19 @@
                         <td class="day" rowspan="3">Vendredi</td>
                         <td>17h30 - 18h45</td>
                         <td>M11 Féminin et Masculin</br>Maxime</td>
-                        <td>.</br></td>
+                        <td>.</td>
                         <td>M13 Féminin</br>Fabrice</td>
                     </tr>
                     <tr>
                         <td>18h45 - 20h15</td>
                         <td>M18 F Débutante</br>Maxime</td>
-                        <td>Départ Féminin</br>Théo</td>
+                        <td>Départ Masculin</br>Dimitri</td>
                         <td>M18 Féminin</br>Fabrice</td>
                     </tr>
                     <tr>
                         <td>20h15 - 22h15</td>
-                        <td>Départ Masculin</br>Maxime</td>
-                        <td>.</br></td>
+                        <td>Départ Féminin</br>Jessy</td>
+                        <td>.</td>
                         <td>Pré-Nationale Masculin</br>Dimitri</td>
                     </tr>                
                 </tbody>
@@ -189,8 +189,8 @@ let schedule = '';
 
 // Détermination de la catégorie et des horaires en fonction de l'année de naissance et du genre
 if (birthYear === '2021' || birthYear === '2020') {
-    category = 'Baby - Tatami en haut';
-    schedule = 'Mercredi 16h30 - 17h30';
+    category = 'Baby';
+    schedule = 'Malheureusement, nous n\'avons pas d\'entraîneur pour cette catégorie';
 } else if (birthYear === '2019' || birthYear === '2018') {
     category = 'M7';
     schedule = 'Mercredi 17h30 - 18h45';
@@ -227,7 +227,7 @@ if (birthYear === '2021' || birthYear === '2020') {
 } else if (birthYear === '2006' || birthYear === '2005' || birthYear === '2004') {
     if (gender === 'female') {
         category = 'M21 Féminin = Départ';
-        schedule = 'Mercredi 18h45 - 20h15 et Vendredi 18h45 - 20h15';
+        schedule = 'Mercredi 18h45 - 20h15 et Vendredi 20h15 - 22h15';
     } else if (gender === 'male') {
         category = 'M21 Masculin = Départ';
         schedule = 'Mardi 18h45 - 20h15 et Jeudi 18h45 - 20h15';
