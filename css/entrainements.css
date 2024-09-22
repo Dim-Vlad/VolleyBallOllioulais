@@ -12,10 +12,12 @@
     margin: 0 auto;
 }
 .training-table {
+    border: 2px solid black;
     width: 90%;
     max-width: 1200px;
     margin: 20px;
     border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 .training-table th, .training-table td {
     border: 1px solid;
@@ -47,7 +49,7 @@
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
     background-color: #f9f9f9;
 }
 .form-container h2 {
@@ -95,6 +97,24 @@
     cursor: pointer;
 }
 
+.complet {
+    color: #b90000;
+    font-size: 0.9rem;
+    background-color: var(--primary-color);
+    border: 2px black solid;
+    border-radius: 20px;
+    margin: 0 70px 0 70px;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.contact {
+    color: #b90000;
+}
+.complet a:hover {
+    cursor: url('/images/volley-cursor32.png'), auto;
+}
+
 
 @media (max-width: 850px) {
     .container {
@@ -124,5 +144,9 @@
     .form-container {
         width: 95%;
         order: -1;
+    }
+    .complet {
+        font-size: 0.7rem;
+        margin: 0 5px 0 5px;
     }
 }
