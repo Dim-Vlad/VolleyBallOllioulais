@@ -81,6 +81,30 @@
     position: relative;
 }
 
+#modal-image {
+    width: 100%; 
+    border-radius: 10px;
+    border: 1px black solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--bg-dark);
+}
+
 
 /* Effet d'animation lors de l'ouverture */
 .modal.show {
