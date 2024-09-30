@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $to = 'dimitrigarrigues@gmail.com';
-    $subject = 'Nouveaux fichiers partager';
+    $to = "dimitrigarrigues@gmail.com, lequint.max@gmail.com";
+    $subject = 'Nouveaux fichiers partager - Stage de la Toussaint';
 
     // Création d'une limite pour séparer les parties du message
     $boundary = md5(time());

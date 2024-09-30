@@ -111,6 +111,15 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
+.affiche img {
+    height: 350px;
+    width: 350px;
+    border: 2px var(--bg-dark) solid;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
 .iframe {
     border: 2px solid black;
     border-radius: 10px;
@@ -138,5 +147,9 @@ h2 {
 
     .iframe {
         height: 300px;
+    }
+
+    .affiche img {
+        display: none;
     }
 }
