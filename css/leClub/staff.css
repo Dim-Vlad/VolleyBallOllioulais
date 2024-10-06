@@ -33,13 +33,20 @@ body {
     justify-content: center;
     padding: 10px;
     border-radius: 10px;
-    border-style: double;
-    border-color: var(--bg-dark);
+    border: var(--bg-dark) double;
     margin: 20px 10px;
     font-weight: bold;
     text-align: center;
     transition: transform 0.5s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.name {
+    margin-top: 10px;
+}
+
+.categorie {
+    margin: 5px 0 5px 0;
 }
 
 .position:hover p {
@@ -48,14 +55,15 @@ body {
 
 .position:hover {
     transform: translateY(-10px);
+    cursor: url('/images/icones/volley-cursor32.png'), auto;
 }
 
 .position img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
 .separator {
@@ -65,24 +73,19 @@ body {
     margin: 20px auto;
 }
 
-.trombinoscope h2 {
+h2 {
     font-size: 24px;
     margin-bottom: 20px;
     color: var(--bg-dark);
 }
 
-.minutes {
+.pvag {
     padding: 20px;
     text-align: center;
 }
 
-.minutes h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: var(--bg-dark);
-}
-
 .button-container {
+    font-size: 1rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
@@ -91,15 +94,15 @@ body {
 
 .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 50px;
     margin: 0 50px;
     background-color: var(--primary-color);
     color: white;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 20px;
     transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
 .btn:hover {
@@ -120,7 +123,7 @@ body {
         align-items: center;
     }
     .position {
-        margin: 10px 0;
+        margin: 10px 10px;
     }
 }
 

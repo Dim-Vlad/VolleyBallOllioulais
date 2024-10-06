@@ -127,7 +127,7 @@ body {
   background-color: white;
   color: var(--secondary-color);
   border-radius: 10px;
-  cursor: url('/images/volley-cursor32.png'), auto;
+  cursor: url('/images/icones/volley-cursor32.png'), auto;
   transition: color 0.3s;
 }
 
@@ -152,7 +152,7 @@ body {
   background-color: white;
   color: var(--secondary-color);
   border-radius: 10px;
-  cursor: url('/images/volley-cursor32.png'), auto;
+  cursor: url('/images/icones/volley-cursor32.png'), auto;
   transition: color 0.3s;
 }
 
@@ -186,7 +186,7 @@ body {
   background-color: white;
   color: var(--secondary-color);
   border-radius: 10px;
-  cursor: url('/images/volley-cursor32.png'), auto;
+  cursor: url('/images/icones/volley-cursor32.png'), auto;
   transition: color 0.3s;
 }
 
@@ -231,8 +231,7 @@ body {
 .liens p a:hover {
   text-decoration: underline;
   color: white;
-  cursor: url('/images/volley-cursor32.png'), auto; /* Spécifie l'image comme curseur et utilise un curseur par défaut si l'image n'est pas disponible */
-  transition: color 0.3s; /* Pour ajouter une transition de couleur sur survol */
+  transition: color 0.3s;
 }
 
 .social-icons {

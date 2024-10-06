@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" style="background-color: rgb(221, 221, 221);">
+<html lang="fr" style="background-color: #acc2ab;">
 
   <head>
     <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -11,7 +11,9 @@
     <meta property="twitter:title" content="Dimitri Garrigues Digital Business Card"> 
 
     <script>
-      "http"==window.location.href.substr(0,4)&&"/"!=window.location.href.slice(-1)&&window.location.replace(window.location.href+"/");
+      if ("http" === window.location.href.substr(0, 4) && "/" !== window.location.href.slice(-1)) {
+        window.location.replace(window.location.href + "/");
+      }
     </script>
 
       <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"> 
@@ -85,8 +87,7 @@
       </style>        
       <link rel="stylesheet" href="/VisitCard-president/style.min.css">
   </head> 
-      
-      <body id="body"><div id="modal" style="background-color: rgb(172, 194, 171); visibility: hidden; top: 2rem; opacity: 0;">
+    <body id="body"><div id="modal" style="background-color: rgb(172, 194, 171); visibility: hidden; top: 2rem; opacity: 0;">
     <a id="close" class="closeColor">
       <div class="icon">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" 
@@ -177,13 +178,13 @@
       </div>
 
       <div class="headerImgC">
-        <img id="cover" src="/VisitCard-president/cover.jpeg" alt="Background Pattern">
+        <img id="cover" src="/VisitCard-president/cover.jpeg" alt="Background Pattern" style="border: 2px #063E0B solid; width: 95%; border-radius: 10px;">
         <img id="logo" src="/VisitCard-president/logo.png" alt="Logo" style="margin: 3rem 0px 6rem;">
       </div>
     </header>
         
         <main style="background-color: rgb(172, 194, 171); margin-top: 0px;">
-          <img id="profilePhoto" src="/VisitCard-president/photo.jpeg" alt="img1">
+          <img id="profilePhoto" src="/VisitCard-president/photo.jpeg" alt="img1" style="border: #063E0B double;">
         <div id="info" class="textColor"><p class="name">Dimitri Garrigues</p> 
           <p class="jobtitle">Président</p>
           <p class="bizname">Volley Ball Ollioulais</p>
@@ -343,13 +344,49 @@
     qr=document.getElementById("qr"),s=document.getElementById("share"),sqr=document.getElementById("showQR"),sk=document.getElementById("showKey");
     function tC(e){"2rem"==e.style.top?(e.style.visibility="visible",e.style.top="0px",e.style.opacity=1):(e.style.top="2rem",
     e.style.opacity=0,setTimeout(()=>{e.style.visibility="hidden"},200))}
-    function dN(e){e.style.display="none"}window.addEventListener("load",()=>{document.querySelector("#topActions").style.display="flex",
-    qr.innerHTML=new QRCode({content:window.location.href,container:"svg-viewbox",join:!0,ecl:"L",padding:0}).svg()}),
-    navigator.canShare?s.addEventListener("click",()=>{navigator.share({title:document.title,text:"You can view my Digital Business Card here:",
-    url:window.location.href})}):s.addEventListener("click",()=>{tC(m),cv.style.display="flex",dN(qrv),ki&&dN(ki)}),sqr.addEventListener("click",()=>{tC(m),
-    qrv.style.display="block",dN(cv),ki&&dN(ki)}),sk&&sk.addEventListener("click",()=>{tC(m),ki&&(ki.style.display="flex"),dN(cv),dN(qrv)}),
-    c.addEventListener("click",()=>tC(m)),curl.addEventListener("click",async()=>{let e=curl.querySelectorAll(".iconColor")[1];
-    await navigator.clipboard.writeText(window.location.href).then(t=>{e.innerText="Copied",setTimeout(()=>{e.innerText="Copy URL"},1e3)})});
+    function dN(e){e.style.display="none";}
+    window.addEventListener("load",()=>{
+      document.querySelector("#topActions").style.display="flex";
+      qr.innerHTML=new QRCode({content:window.location.href,container:"svg-viewbox",join:!0,ecl:"L",padding:0}).svg();
+    });
+    if (navigator.canShare) {
+      s.addEventListener("click",()=>{
+        navigator.share({
+          title:document.title,
+          text:"You can view my Digital Business Card here:",
+          url:window.location.href
+        });
+      });
+    } else {
+      s.addEventListener("click",()=>{
+        tC(m);
+        cv.style.display="flex";
+        dN(qrv);
+        if (ki) dN(ki);
+      });
+    }
+    sqr.addEventListener("click",()=>{
+      tC(m);
+      qrv.style.display="block";
+      dN(cv);
+      if (ki) dN(ki);
+    });
+    if (sk) {
+      sk.addEventListener("click",()=>{
+        tC(m);
+        if (ki) ki.style.display="flex";
+        dN(cv);
+        dN(qrv);
+      });
+    }
+    c.addEventListener("click",()=>tC(m));
+    curl.addEventListener("click",async()=>{
+      let e=curl.querySelectorAll(".iconColor")[1];
+      await navigator.clipboard.writeText(window.location.href).then(t=>{
+              e.innerText="Copied";
+              setTimeout(()=>{e.innerText="Copy URL";},1000);
+            }).catch(err => console.error('Failed to copy text: ', err));
+    });
   </script>
 </body>
 </html>
