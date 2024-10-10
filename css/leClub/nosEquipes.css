@@ -38,14 +38,13 @@
     transition: 0.2s;
     padding: 20px;
     box-shadow: 0 30px 20px #5555;
+    border: 2px solid #888;
 }
 
 .wrap img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    border: 2px solid;
-    border-color: var(--bg-dark);
 }
 
 .modal {
@@ -84,8 +83,8 @@
 #modal-image {
     width: 100%; 
     border-radius: 10px;
-    border: 1px black solid;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px #888 solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
 .btn {
