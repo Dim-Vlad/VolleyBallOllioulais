@@ -1,12 +1,12 @@
-/* Styles pour le carrousel */
 .carousel {
     position: relative;
-    max-width: 60%;
+    max-width: 50%;
     margin: 20px auto;
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     border: 2px var(--primary-color) solid;
+    background-color: beige;
 }
 
 .carousel-inner {
@@ -23,7 +23,7 @@
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .carousel-control-prev, .carousel-control-next {
@@ -133,20 +133,25 @@ p {
         width: 80%;
         margin: 15px 0;
     }
-}
 
-.thumbnail {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin: 5px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-.thumbnail-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
+    .thumbnail {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin: 5px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .thumbnail-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .carousel {
+        max-width: 95%;
+    }
 }
