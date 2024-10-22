@@ -1,13 +1,9 @@
 BEGIN:VCARD
 VERSION:3.0
-FN:Dimitri Garrigues
-N:Garrigues;Dimitri;;;
+FN:Dimitri GARRIGUES
 ORG:DG-Dev
 TITLE:Web Développeur
 TEL;TYPE=CELL:+33603891971
-EMAIL;TYPE=INTERNET:dimitrigarrigues@gmail.com
-ADR;TYPE=WORK:;;305 Avenue Général Gourdaud;Toulon;;83200;France
-URL;TYPE=LinkedIn:https://www.linkedin.com/in/dimitri-garrigues-4b76a317b/
-URL;TYPE=GitHub:https://github.com/Dim-Vlad
-URL;TYPE=Reddit:https://www.reddit.com/user/Dim-Vlad
+EMAIL:dimitrigarrigues@gmail.com
+ADR:;;305 Avenue Général Gouraud;Toulon;;83200;France
 END:VCARD
