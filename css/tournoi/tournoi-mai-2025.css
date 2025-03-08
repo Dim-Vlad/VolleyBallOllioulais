@@ -1,0 +1,79 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+    border: 2px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    border-radius: 20px;
+}
+
+.tableau-inscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+    border: 2px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    border-radius: 20px;
+}
+
+
+@media screen and (max-width: 1120px) {
+    .inscription {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .helloasso {
+        order: 1;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .tableau {
+        order: 2;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .video {
+        order: 3;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media screen and (max-width: 728px) {
+    .tableau {
+        position: relative;
+        width: 90%;
+        height: 870px;
+        overflow: hidden;
+        touch-action: pan-x pan-y;
+        margin: 0 auto 10px;    
+    }
+    
+    .tableau iframe {
+        width: 95%;
+        height: 95%;
+        zoom: 50%;
+    }    
+}
