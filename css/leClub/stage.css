@@ -20,6 +20,14 @@
     color: var(--bg-dark);
 }
 
+.affiche {
+    width: auto;
+    height: auto;
+    border: 2px var(--bg-dark) solid;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
 
 .container {
     display: flex;
@@ -57,59 +65,12 @@
     border: 2px var(--bg-dark) solid;
 }
 
-.tournoi img {
-    width: 70%;
-    border-radius: 20px;
-}
-
-.telecharg {
-    color: var(--bg-dark);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.telecharg:hover {
-    text-decoration: underline;
-}
 
 h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
     text-decoration: underline;
     color: var(--bg-dark);
-}
-
-.block ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.block .liens {
-    margin-bottom: 5px;
-}
-
-.texte-explication {
-    font-size: 0.875rem;
-    color: #555;
-    margin-top: 10px;
-}
-
-.thumbnail {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin: 5px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-}
-.thumbnail-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
 }
 
 .video {
@@ -119,12 +80,6 @@ h2 {
     border-radius: 20px;
     background-color: var(--primary-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-}
-
-.iframe {
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 90%;
 }
 
 .btn {
@@ -160,21 +115,4 @@ h2 {
         font-size: 1.1rem;
     }
 
-    .telecharg {
-        font-size: 1rem;
-    }
-
-    .iframe {
-        height: 300px;
-    }
-
-    .tournoi img {
-        width: 50%;
-    }
-
-    .tournoi a {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-    }
 }
