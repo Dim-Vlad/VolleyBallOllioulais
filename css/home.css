@@ -95,6 +95,13 @@
     margin: 20px 0;
 }
 
+.separator {
+    width: 80%; 
+    max-width: 600px;
+    border-top: 2px solid #ccc;
+    margin: 50px auto 20px auto;
+}
+
 @media (max-width: 768px) {
     .header-content-presentation,
     .header-content-presentation.reverse {
