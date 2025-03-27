@@ -4,18 +4,39 @@ h2 {
     color: var(--secondary-color);
 }
 
-.benevoles {
+.main-contant {
+    display: flex; /* Affiche les divs en ligne */
+    justify-content: space-between; /* Espacement entre les colonnes */
+    gap: 20px; /* Ajoute un espace entre les deux divs */
+    align-items: flex-start; /* Aligne les divs en haut */
+}
+
+.benevoles, .commission {
+    flex: 1;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin: 20px 0;
 }
 
-.benevoles-content {
+.benevoles-content, .commission-content{
+    max-width: 80%;
     background-color: var(--primary-color);
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.commission-content p {
+    text-align: left;
+    margin-top: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
 }
 
 a {

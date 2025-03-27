@@ -45,6 +45,11 @@ body {
     margin-top: 10px;
 }
 
+.name-commission {
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
 .categorie {
     margin: 5px 0 5px 0;
 }
@@ -64,6 +69,15 @@ body {
     border-radius: 50%;
     object-fit: contain;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.position a {
+    color: var(--secondary-color);
+    margin: 5px;
+}
+
+.position a:hover {
+    color: white;
 }
 
 .separator {
