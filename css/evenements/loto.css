@@ -37,3 +37,12 @@ p, ul {
     border-radius: 20px;
     margin: 20px 0;
 }
+
+.affiche img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    margin: 20px auto;
+}
