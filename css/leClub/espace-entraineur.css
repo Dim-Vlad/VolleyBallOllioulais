@@ -214,11 +214,9 @@
     0% {
     transform: translateY(0px);
 }
-
     50% {
     transform: translateY(-20px);
 }
-
     100% {
     transform: translateY(0px);
 }
@@ -227,7 +225,6 @@
 .input-container {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 3rem;
     width: 100%;
     max-width: 600px;
@@ -235,10 +232,12 @@
     flex-wrap: wrap;
 }
 
-.form-control {
+.input-container .form-control {
+    flex: 1;
+    min-width: 250px;
+    box-sizing: border-box;
     position: relative;
-    margin: 20px 0 40px;
-    width: calc(50% - 1.5rem);
+    margin: 20px 0;
 }
 
 .form-control input {
@@ -255,7 +254,7 @@
 .form-control input:focus,
 .form-control input:valid {
     outline: 0;
-    border-bottom-color: var(--bg-dark);
+    border-bottom-color: var(--primary-color);
 }
 
 .form-control label {
@@ -263,20 +262,23 @@
     top: 15px;
     left: 0;
     pointer-events: none;
+    transition: all 0.3s ease;
 }
 
 .form-control label span {
     display: inline-block;
     font-size: 18px;
     min-width: 5px;
-    color: var(--bg-dark)f;
-    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: var(--bg-dark);
+    opacity: 0.7;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.form-control input:focus+label span,
-.form-control input:valid+label span {
-    color: var(--bg-dark);
+.form-control input:focus + label span,
+.form-control input:valid + label span {
     transform: translateY(-30px);
+    color: var(--primary-color);
+    opacity: 1;
 }
 
 .btn-submit {
@@ -302,6 +304,7 @@
 .full-width {
     width: 100%;
     text-align: center;
+    margin-top: 20px;
 }
 
 /* ===== SECTIONS "DOCUMENTS" ET "TICKETS" ET "SITE FFVB" ===== */
@@ -420,16 +423,16 @@
         font-size: 1.5rem;
     }
 
-    .form-control {
-        width: 100%;
-        flex: 1 0 100%;
-    }
-
     .input-container {
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-container .form-control {
+        width: 100%;
     }
 
     .form-control label span {
-        font-size: 1rem;
+        font-size: 16px;
     }
 }

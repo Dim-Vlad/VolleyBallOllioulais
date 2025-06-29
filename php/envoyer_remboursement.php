@@ -1,69 +1,88 @@
 <?php
-// Vérifier si les données sont bien envoyées
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // ====== Vérification du fichier ======
+    if (!isset($_FILES['fichier'])) {
+        die("Aucun fichier reçu. Vérifiez le champ <strong>fichier</strong>.");
+    }
+
+    $file = $_FILES['fichier'];
+
+    // ====== Erreur upload ======
+    if ($file['error'] !== UPLOAD_ERR_OK) {
+        die("Erreur lors de l'upload du fichier. Code erreur : " . $file['error']);
+    }
+
+    // ====== Type de fichier ======
+    $finfo = finfo_open(FILEINFO_MIME_TYPE);
+    $mime_type = finfo_file($finfo, $file['tmp_name']);
+    finfo_close($finfo);
+
+    if ($mime_type !== 'application/pdf') {
+        die("Le fichier n'est pas un PDF valide. Type détecté : $mime_type");
+    }
+
+    // ====== Récupération des champs texte ======
     $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
     if (!$nom || !$email) {
-        echo "<script>alert('Veuillez remplir tous les champs correctement.'); window.history.back();</script>";
-        exit;
+        die("Les champs Nom ou Email sont invalides.");
     }
 
-    // Gestion du fichier
-    if (!isset($_FILES['fichier']) || $_FILES['fichier']['error'] !== UPLOAD_ERR_OK) {
-        echo "<script>alert('Erreur lors du téléchargement du fichier.'); window.history.back();</script>";
-        exit;
-    }
+    // ====== Envoi par e-mail ======
+    $destinataire = "dimitrigarrigues@gmail.com; elodiep67@gmail.com; secretariatvbo@free.fr";
+    $sujet = "Nouveau formulaire avec PDF - $nom";
 
-    $fichier_tmp = $_FILES['fichier']['tmp_name'];
-    $fichier_nom = basename($_FILES['fichier']['name']);
-    $fichier_type = $_FILES['fichier']['type'];
-
-    // Limiter aux PDF
-    if ($fichier_type !== 'application/pdf') {
-        echo "<script>alert('Seuls les fichiers PDF sont autorisés.'); window.history.back();</script>";
-        exit;
-    }
-
-    // Contenu du message
     $message = "Nom : $nom\n";
     $message .= "Email : $email\n";
 
-    // Destinataire
-    $destinataire = "dimitrigarrigues@gmail.com; arron7_330@hotmail.com";
-    $sujet = "Formulaire avec fichier PDF - $nom";
-
-    // Frontière unique
-    $boundary = md5(uniqid(mt_rand(), true));
-
-    // Entêtes
-    $headers = "From: $email\r\n";
+    // ====== Préparation pièce jointe ======
+    $boundary = md5(uniqid());
+    $headers = "From: webmaster@volleyballollioulais.fr\r\n";
     $headers .= "Reply-To: $email\r\n";
+    $headers .= "Return-Path: contact@votresite.com\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+    $headers .= "X-Priority: 3\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
 
-    // Corps du mail
-    $body = "--$boundary\r\n";
-    $body .= "Content-Type: text/plain; charset=\"utf-8\"\r\n";
-    $body .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
-    $body .= $message . "\r\n\r\n";
+    $body .= "Message reçu depuis le formulaire de remboursement d'équipe.\n\n";
+    $body .= "Merci de trouver ci-joint la demande de $nom ($email).\n\n";
+    $body .= "------------------------------------------\n";
+    $body .= "Nom : $nom\n";
+    $body .= "Email : $email\n";
+    $body .= "Date : " . date('d/m/Y H:i') . "\n";
+    $body .= "------------------------------------------\n\n";
 
-    // Lecture du fichier
-    $fichier_content = file_get_contents($fichier_tmp);
-    $fichier_content = chunk_split(base64_encode($fichier_content));
+    $content = file_get_contents($file['tmp_name']);
+    $content = chunk_split(base64_encode($content));
 
-    // Pièce jointe
     $body .= "--$boundary\r\n";
-    $body .= "Content-Type: application/pdf; name=\"$fichier_nom\"\r\n";
+    $body .= "Content-Type: application/pdf; name=\"" . $file['name'] . "\"\r\n";
     $body .= "Content-Disposition: attachment\r\n";
     $body .= "Content-Transfer-Encoding: base64\r\n\r\n";
-    $body .= $fichier_content . "\r\n";
-    $body .= "--$boundary--\r\n";
+    $body .= $content . "\r\n";
+    $body .= "--$boundary--";
 
-    // Envoi du mail
+    // ====== Envoi ======
     if (mail($destinataire, $sujet, $body, $headers)) {
-        echo "<script>alert('Message envoyé avec succès !'); window.location.href='../index.html';</script>";
+        echo "<div style='text-align:center; padding: 2rem; font-family: sans-serif;'>
+                <h1>✅ Message envoyé avec succès !</h1>
+                <p>Merci $nom, votre message a été envoyé avec succès.</p>
+                <a href='/pages/leClub/espace-entraineur.html'>← Retour au formulaire</a>
+            </div>";
     } else {
-        echo "<script>alert('Erreur lors de l\'envoi du message.'); window.history.back();</script>";
+        echo "<div style='text-align:center; padding: 2rem; font-family: sans-serif;'>
+                <h1>❌ Erreur lors de l'envoi</h1>
+                <p>Une erreur est survenue lors de l'envoi du mail.</p>
+                <a href='javascript:history.back()'>← Réessayer</a>
+            </div>";
     }
+} else {
+    echo "<div style='text-align:center; padding: 2rem; font-family: sans-serif;'>
+            <h1>⚠️ Méthode non autorisée</h1>
+            <p>Seule la méthode POST est acceptée.</p>
+            <a href='../index.html'>← Accueil</a>
+        </div>";
 }
+?>
