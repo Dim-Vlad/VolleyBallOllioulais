@@ -16,6 +16,20 @@ const descriptions = {
             <li>Communiquer avec la mairie pour la réservation du gymnase</li>
         </ul>
     `,
+    "Financière": `
+        <h3>Objectif :</h3>
+        <p>Assurer la stabilité financière du club et optimiser la gestion des ressources</p>
+        
+        <h3>Missions :</h3>
+        <ul>
+            <li>Élaborer et suivre le budget annuel du club</li>
+            <li>Préparer le bilan financier présenté à l’Assemblée Générale</li>
+            <li>Rechercher des sources de financement (subventions, partenariats, mécénat)</li>
+            <li>Conseiller les autres commissions sur la faisabilité financière de leurs projets</li>
+            <li>Gérer les inscriptions HelloAsso (tournois, repas, événements payants)</li>
+            <li>Assurer une transparence financière auprès des membres du club</li>
+        </ul>
+    `,
     "Arbitrage": `
         <h3>Objectif :</h3>
         <p>Garantir la présence et la formation des arbitres du club</p>
@@ -55,6 +69,7 @@ const descriptions = {
         </ul>
     `,
     "Textile": `
+        <p>Adjoint : Pierre Desoomer</p>
         <h3>Objectif :</h3>
         <p>Gérer les équipements et les tenues du club</p>
         

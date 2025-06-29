@@ -26,7 +26,7 @@
     </div>
 
     <div class="complet">
-        <h2>Toutes nos catégories sont complètes.<br> En attendant le retour des dossiers d'inscriptions, nous ne prenons plus de joueurs aux entraînements. 
+        <h2>Le planning des entrainements de la saison 2025 - 2026 sera bientôt mis en ligne.</br>
             Vous pouvez <a class="contact" href="/pages/nousContacter.html"> contacter le club</a> pour plus de renseignements.</h2>
     </div>
 
@@ -147,6 +147,7 @@
                 <label for="birth-year">Année de Naissance:</label>
                 <select id="birth-year" name="birth-year" required>
                     <option value="" disabled selected>Choisir l'année de naissance</option>
+                    <option value="2021">2022</option>
                     <option value="2021">2021</option>
                     <option value="2020">2020</option>
                     <option value="2019">2019</option>
@@ -164,8 +165,7 @@
                     <option value="2007">2007</option>
                     <option value="2006">2006</option>
                     <option value="2005">2005</option>
-                    <option value="2004">2004</option>
-                    <option value="2003">2003 ou avant</option>
+                    <option value="2004">2004 ou avant</option>
                 </select>
                 <label for="gender">Genre:</label>
                 <select id="gender" name="gender" required>
@@ -193,19 +193,19 @@ let category = '';
 let schedule = '';
 
 // Détermination de la catégorie et des horaires en fonction de l'année de naissance et du genre
-if (birthYear === '2021' || birthYear === '2020') {
+if (birthYear === '2022' || birthYear === '2021') {
     category = 'Baby';
     schedule = 'Malheureusement, nous n\'avons pas d\'entraîneur pour cette catégorie';
-} else if (birthYear === '2019' || birthYear === '2018') {
+} else if (birthYear === '2020' || birthYear === '2019') {
     category = 'M7';
     schedule = 'Mercredi 17h30 - 18h45';
-} else if (birthYear === '2017' || birthYear === '2016') {
+} else if (birthYear === '2018' || birthYear === '2017') {
     category = 'M9';
     schedule = 'Mercredi 17h30 - 18h45';    
-} else if (birthYear === '2015' || birthYear === '2014') {
+} else if (birthYear === '2016' || birthYear === '2015') {
     category = 'M11';
     schedule = 'Mercredi 17h30 - 18h45 et Vendredi 17h30 - 18h45';
-} else if (birthYear === '2013' || birthYear === '2012') {
+} else if (birthYear === '2014' || birthYear === '2013') {
     if (gender === 'female') {
         category = 'M13 Féminin';
         schedule = 'Mercredi 17h30 - 18h45 et Vendredi 17h30 - 18h45';
@@ -213,7 +213,7 @@ if (birthYear === '2021' || birthYear === '2020') {
         category = 'M13 Masculin';
         schedule = 'Mardi 17h30 - 18h45 et Jeudi 17h30 - 18h45';
     }
-} else if (birthYear === '2011' || birthYear === '2010') {
+} else if (birthYear === '2012' || birthYear === '2011') {
     if (gender === 'female') {
         category = 'M15 Féminin';
         schedule = 'Lundi - 18h00 - 19h30 à la Cordeille et Jeudi 17h30 - 18h45';
@@ -221,7 +221,7 @@ if (birthYear === '2021' || birthYear === '2020') {
         category = 'M15 Masculin';
         schedule = 'Mardi 17h30 - 18h45 et Jeudi 17h30 - 18h45';
     }
-} else if (birthYear === '2009' || birthYear === '2008' || birthYear === '2007') {
+} else if (birthYear === '2010' || birthYear === '2009' || birthYear === '2008') {
     if (gender === 'female') {
         category = 'M18 Féminin';
         schedule = 'Mercredi 18h45 - 20h15 et Vendredi 18h45 - 20h15';
@@ -229,7 +229,7 @@ if (birthYear === '2021' || birthYear === '2020') {
         category = 'M18 Masculin';
         schedule = 'Prendre contact avec le club pour plus d\'infromations';
     } 
-} else if (birthYear === '2006' || birthYear === '2005' || birthYear === '2004') {
+} else if (birthYear === '2007' || birthYear === '2006' || birthYear === '2005') {
     if (gender === 'female') {
         category = 'M21 Féminin = Départ';
         schedule = 'Mercredi 18h45 - 20h15 et Vendredi 20h15 - 22h15';
