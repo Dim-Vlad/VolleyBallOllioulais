@@ -1,12 +1,12 @@
+/* === Variables globales === */
 :root {
   --primary-color: #acc2ab;
   --secondary-color: #063E0B;
   --color-green: #85B683;
   --bg-dark: #223224;
-  --font-poppins: font-family: 'Poppins', sans-serif;
-}
+  --font-poppins: 'Poppins', sans-serif;
 
-.root-colors {
+  /* Palette de couleurs progressive */
   --50: #f3f6f3;
   --100: #e3eae1;
   --200: #c6d5c5;
@@ -20,9 +20,9 @@
   --950: #121c13;
 }
 
-
+/* === Styles généraux === */
 body {
-  font-family: Poppins, sans-serif;
+  font-family: var(--font-poppins);
   margin: 0;
   padding: 0;
   background-color: #faf8f8;
@@ -34,12 +34,12 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Logo VBO*/
+/* === Header / Logo VBO === */
 .header-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 100px 50px 100px; /* Ajoute un peu de padding autour du contenu pour espacer du bord */
+  padding: 100px 100px 50px;
 }
 
 .logo-club {
@@ -53,16 +53,15 @@ body {
 .text-content {
   flex: 1;
   color: var(--bg-dark);
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2vw + 1rem, 1.5rem); /* Responsive font size */
 }
 
-/* Styles pour le menu */
+/* === Navbar === */
 .navbar {
   background-color: var(--primary-color);
   padding: 10px;
   position: fixed;
   top: 0;
-  font-size: 1.2rem;
   left: 0;
   width: 100%;
   z-index: 1010;
@@ -78,7 +77,6 @@ body {
   padding: 0 5px;
 }
 
-/* Marque du menu */
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -86,7 +84,7 @@ body {
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
-  font-family: Poppins, sans-serif;
+  font-family: var(--font-poppins);
   margin-left: 0;
 }
 
@@ -95,7 +93,7 @@ body {
   margin-right: 10px;
 }
 
-/* Style du bouton menu burger */
+/* === Menu burger (mobile) === */
 .navbar-toggler {
   background: none;
   border: none;
@@ -103,64 +101,46 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
   display: none;
-  position: relative;
   margin-left: auto;
   margin-right: 20px;
   width: 30px;
   height: 25px;
 }
 
+/* === Liens du menu === */
 .navbar-links {
   display: flex;
   gap: 10px;
   margin-right: 30px;
 }
 
-.navbar-links a {
+.navbar-links a,
+.dropdown button {
   color: var(--secondary-color);
   text-decoration: none;
   padding: 12px 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-poppins);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--primary-color);
+  cursor: url('/images/icones/volley-cursor32.png'), auto;
+  border: none;
+  font-size: 1.2rem;
 }
 
-.navbar-links a:hover {
-  background-color: white;
+.navbar-links a:hover,
+.dropdown button:hover {
   color: var(--secondary-color);
-  border-radius: 10px;
-  cursor: url('/images/icones/volley-cursor32.png'), auto;
-  transition: color 0.3s;
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
-  font-family: Poppins, sans-serif;
-}
-
-.dropdown button {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  padding: 12px 10px;
-  font-size: 1.2rem;
-  border: none;
-  display: flex;
-  align-items: center;
-  font-family: 'Poppins', sans-serif;  
-}
-
-.dropdown button:hover {
-  background-color: white;
-  color: var(--secondary-color);
-  border-radius: 10px;
-  cursor: url('/images/icones/volley-cursor32.png'), auto;
-  transition: color 0.3s;
 }
 
 .dropdown button::after {
   content: "▼";
   margin-left: 10px;
   font-size: 15px;
-
 }
 
 .dropdown-content {
@@ -179,23 +159,19 @@ body {
   text-decoration: none;
   display: block;
   border-radius: 4px;
-  font-family: Poppins, sans-serif;
 }
 
 .dropdown-content a:hover {
   background-color: white;
   color: var(--secondary-color);
   border-radius: 10px;
-  cursor: url('/images/icones/volley-cursor32.png'), auto;
-  transition: color 0.3s;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-
-/* Styles pour le footer */
+/* === Footer === */
 .footer {
   background-color: var(--primary-color);
   color: var(--bg-dark);
@@ -203,7 +179,7 @@ body {
   padding: 20px 0;
   width: 100%;
   font-size: 1.2rem;
-  font-family: Poppins, sans-serif;
+  font-family: var(--font-poppins);
 }
 
 .footer-content {
@@ -211,14 +187,19 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
-.adresse, .liens, .réseaux {
-  flex: 1;
+.adresse,
+.liens,
+.réseaux {
+  flex: 1 1 200px;
   padding: 0 20px;
 }
 
-.adresse p, .liens p, .réseaux h2 {
+.adresse p,
+.liens p,
+.réseaux h2 {
   margin: 0;
   padding: 10px 0;
 }
@@ -231,7 +212,6 @@ body {
 .liens p a:hover {
   text-decoration: underline;
   color: white;
-  transition: color 0.3s;
 }
 
 .social-icons {
@@ -257,75 +237,63 @@ body {
 }
 
 
-@media (max-width: 1200px) {
+/* === Styles pour tablettes et petits écrans (<= 1300px) === */
+@media (max-width: 1300px) {
   .navbar-links,
+  .navbar-brand
   .text-content,
   .dropdown button {
     font-size: 1rem;
   }
 
-  .navbar-brand {
-    font-size: 1.5rem;
-  }
-
-  .logo-club{
+  .logo-club {
     width: 75%;
     height: auto;
     max-width: 200px;
   }
-}
-
-@media (max-width: 890px) {
-  .navbar-links,
-  .navbar-brand,
-  .text-content,
-  .dropdown button {
-    font-size: 1rem;
-  }
-
-  .logo-club{
-    width: 75%;
-    height: auto;
-    max-width: 200px;
-  }
-
-  .navbar-logo{
-    display: none;
-  }
-}
-
-@media (max-width: 790px) {
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    width: 70%;
-    max-width: 300px;
-    text-align: center;
-    margin: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: var(--primary-color);
-    height: 100%;
-    z-index: 1001;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    border-radius: 20px;
-  }
-
-  .navbar-brand{
-    font-size: 1.5rem;
-  }
-
-  .navbar-toggler {
+.navbar-toggler {
     display: block;
     margin-bottom: 20px;
-    zoom: 150%;
+    transform: scale(1.5);
   }
 
   .navbar-links.show {
+    transform: translateX(0);
+  }
+
+  .navbar-links {
+    background-color: var(--primary-color);
+    opacity: 0.95;
     display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    max-width: 300px;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 20px;
+    border: 1px solid var(--secondary-color);
+    padding-top: 30px;
+    height: auto;
+    min-height: fit-content;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
+
+/* === Styles pour mobiles (<= 790px) === */
+@media (max-width: 790px) {
+  .navbar-toggler {
+    display: block;
+    margin-bottom: 20px;
+    transform: scale(1.5);
+  }
+
+  .navbar-links.show {
     transform: translateX(0);
   }
 
@@ -333,51 +301,58 @@ body {
     font-size: 1.2rem;
     display: block;
     padding: 12px 10px;
+    width: 90%;
+    text-align: center;
   }
 
+/* === Style spécial pour les dropdowns en mode mobile === */
   .dropdown {
+    position: relative;
     width: 100%;
-    text-align: center; 
+    text-align: center;
   }
 
   .dropdown button {
-    display: block;
-    width: 100%;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    border: none;
-    padding: 12px 10px;
     font-size: 1.2rem;
-    cursor: pointer;
+    width: 100%;
+    padding: 15px 0;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .dropdown:hover button {
+    background-color: white;
   }
 
   .dropdown-content {
-    position: relative;
     display: none;
-    border: 1px solid var(--secondary-color);
+    position: static;
     background-color: var(--primary-color);
-    min-width: 100%;
+    width: 100%;
     box-shadow: none;
-    border-radius: 10px;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .dropdown-content a {
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1rem;
+    border-radius: 0;
+    background-color: whitesmoke;
+    width: 100%;    
+  }
+
+  .dropdown:hover .dropdown-content,
+  .dropdown.active .dropdown-content {
+    display: block;
   }
 
   .dropdown-content a:hover {
     background-color: white;
     color: var(--secondary-color);
     border-radius: 10px;
-    padding: 12px 10px;
     transition: color 0.3s;
-    font-size: 1.2rem;
-  }
-
-  .dropdown-content a {
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 200px;
-    padding: 12px 10px;
   }
 
   .footer-content {
@@ -394,13 +369,11 @@ body {
 
   .text-content {
     margin: 0 10px;
-    font-size: 14px;
+    font-size: clamp(12px, 1vw + 10px, 14px);
   }
 
   .logo-club {
     width: 70%;
-    height: auto;
     max-width: 200px;
   }
 }
-
