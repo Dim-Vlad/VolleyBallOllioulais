@@ -29,12 +29,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Les champs Nom ou Email sont invalides.");
     }
 
-    // ====== Envoi par e-mail ======
-    $destinataire = "dimitrigarrigues@gmail.com; elodiep67@gmail.com; secretariatvbo@free.fr";
+    // ====== Paramètres email ======
+    $destinataire = "dimitrigarrigues@gmail.com, elodiep67@gmail.com, secretariatvbo@free.fr";
     $sujet = "Nouveau formulaire avec PDF - $nom";
 
-    $message = "Nom : $nom\n";
+    $message = "Message reçu depuis le formulaire de remboursement.\n\n";
+    $message .= "Merci de trouver ci-joint la demande de $nom ($email).\n\n";
+    $message .= "------------------------------------------\n";
+    $message .= "Nom : $nom\n";
     $message .= "Email : $email\n";
+    $message .= "Date : " . date('d/m/Y H:i') . "\n";
+    $message .= "------------------------------------------\n\n";
 
     // ====== Préparation pièce jointe ======
     $boundary = md5(uniqid());
@@ -46,13 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
 
-    $body .= "Message reçu depuis le formulaire de remboursement d'équipe.\n\n";
-    $body .= "Merci de trouver ci-joint la demande de $nom ($email).\n\n";
-    $body .= "------------------------------------------\n";
-    $body .= "Nom : $nom\n";
-    $body .= "Email : $email\n";
-    $body .= "Date : " . date('d/m/Y H:i') . "\n";
-    $body .= "------------------------------------------\n\n";
+    $body = "--$boundary\r\n";
+    $body .= "Content-Type: text/plain; charset=\"utf-8\"\r\n\r\n";
+    $body .= $message . "\r\n\r\n";
 
     $content = file_get_contents($file['tmp_name']);
     $content = chunk_split(base64_encode($content));
