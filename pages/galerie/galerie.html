@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galerie - VBO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper @11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper @11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css " />
     <link href="/css/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/galerie/galerie.css">
     <link rel="icon" href="/images/favicon-36x36.png" type="image/x-icon">
@@ -14,199 +17,124 @@
 
 <body>
     <div id="menu"></div>
+
     <div id="content">
         <div class="header-content">
             <img class="logo-club" src="/images/logo-club/LogoVBO.png" alt="Logo du club" class="club-logo">
             <div class="text-content">
                 <h1>Galerie</h1>
-                <p>Vous pouvez nous partager vos photos pour qu'elles soient ensuite publiées sur nos réseaux.</p>
-            </div>
-        </div>
-    </div>
-    
-    <div class="upload-container">
-        <h2>Partagez vos photos</h2>
-        <form id="photo-form" enctype="multipart/form-data" method="post" action="/php/send_mail_galerie.php">
-            <input type="file" id="photo-upload" name="photos[]" accept="image/*" multiple style="display: none;">
-            <label for="photo-upload" class="btn">1 . Sélectionner des Photos</label>
-            <p style="color: var(--secondary-color);">- - - -</p>
-            <div id="thumbnails" class="thumbnail-container"></div>
-            <input type="submit" value="2 . Envoyer" class="btn">
-        </form>
-    </div>
-
-    <h2>Images à la une</h2>
-    <div class="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/v1727706993/image00001_akjskz.jpg" alt="img 1">
-            </div>
-            <div class="carousel-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/v1727706993/image00002_sidyp0.jpg" alt="img 2">
-            </div>
-            <div class="carousel-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/v1727706994/image00007_i5wix6.jpg" alt="img 3">
-            </div>
-            <div class="carousel-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/M15F-24-25_lcsbyi.jpg" alt="img 4">
-            </div>
-            <div class="carousel-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/v1727707035/PNM-24-25_gbjw5h.jpg" alt="img 5">
-            </div>
-            <div class="carousel-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/v1727710426/N3M-24-25_pwtte5.jpg" alt="img 6">
-            </div>
-            <div class="carousel-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/M18F-photo2-24-25_rqqwzg.jpg" alt="img 6">
-            </div>
-            <div class="carousel-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/departM-24-25_porizl.jpg" alt="img 6">
-            </div>
-        </div>
-        <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
-        <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
-    </div>
-    
-    <h2>D'autres photos</h2>    
-    <div class="photo-gallery">
-        <h3>Saison 2024-2025</h3>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/v1727707017/image00030_k0cshg.jpg" alt="img 1">
-            </div>
-            <div class="gallery-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/v1727707014/image00024_vcznaz.jpg" alt="img 2">
-            </div>
-            <div class="gallery-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/v1727707012/image00018_yofwll.jpg" alt="img 3">
-            </div>
-            <div class="gallery-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/M18F-photo2-24-25_rqqwzg.jpg" alt="img 3">
-            </div>
-            <div class="gallery-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/departM-24-25_porizl.jpg" alt="img 3">
-            </div>
-            <div class="gallery-item">
-                <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/v1727706994/image00007_i5wix6.jpg" alt="img 3">
-            </div>
-            <div class="gallery-item">
-                <a href="/pages/galerie/galerie24-25.html">
-                    <img src="https://res.cloudinary.com/volleyballollioulais/image/upload/PXL_20241012_130240110_qq9h3j.jpg" alt="img 4">
-                    <div class="text-overlay">Voir plus</div>
-                </a>
+                <p>Vous pouvez nous partager vos photos pour qu'elles soient ensuite publiées ici sur le site et sur nos réseaux.</p>
             </div>
         </div>
     </div>
 
-    <!-- Dossier Archives -->
-    <div class="photo-gallery">
-        <h3>Archives</h3>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <a href="/pages/galerie/galerie23-24.html">
-                    <p>2023-2024</p>
-                    <img src="https://live.staticflickr.com/65535/54079544201_5642fb50a4_z.jpg" alt="img 1">    
-                </a>
+<section class="carousel-section">
+    <h2>Photos à la une</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/photos/saison-24-25/20241218_175606.jpg" alt="vedette 1"></div>
+                <div class="swiper-slide"><img src="/photos/saison-24-25/20241218_175615.jpg" alt="vedette 2"></div>
+                <div class="swiper-slide"><img src="/photos/saison-24-25/20241218_181119.jpg" alt="vedette 3"></div>
+                <div class="swiper-slide"><img src="/photos/saison-24-25/IMG-20241031-WA0003.jpg" alt="vedette 4"></div>
+                <div class="swiper-slide"><img src="/photos/saison-24-25/IMG-20241031-WA0006.jpg" alt="vedette 5"></div>
+                <div class="swiper-slide"><img src="/photos/saison-24-25/IMG-20241031-WA0007.jpg" alt="vedette 6"></div>
+                <div class="swiper-slide"><img src="/photos/saison-24-25/IMG-20241031-WA0011.jpg" alt="vedette 7"></div>
+                <div class="swiper-slide"><img src="/photos/saison-24-25/IMG-20250221-WA0016.jpg" alt="vedette 8"></div>
+                <div class="swiper-slide"><img src="/photos/saison-24-25/IMG-20250221-WA0023.jpg" alt="vedette 9"></div>
+                <div class="swiper-slide"><img src="/photos/saison-24-25/IMG-20250221-WA0030.jpg" alt="vedette 10"></div>
             </div>
-            <!-- <div class="gallery-item">
-                <a href="/pages/404.html">
-                    <p>2022-2023</p>
-                    <img src="/images/ImageEntrainement.jpg" alt="img 1">    
-                </a>
-            </div>             -->
-            <div class="gallery-item">
-                <a href="/pages/galerie/galerie-evenement.html"> 
-                    <p>Evènements</p>
-                    <img src="https://live.staticflickr.com/65535/54079808758_7c76ca6db4_z.jpg" alt="img 3">
-                </a>
-            </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
         </div>
+</section>
+
+<section class="gallery-section">
+    <h2>Saison 2024-2025</h2>
+        <div class="photo-grid">
+            <a href="/photos/saison-24-25/IMG20250510155937.jpg"><img src="/photos/saison-24-25/IMG20250510155937.jpg" alt=""></a>
+            <a href="/photos/saison-24-25/IMG20250510155927.jpg"><img src="/photos/saison-24-25/IMG20250510155927.jpg" alt=""></a>
+            <a href="/photos/saison-24-25/IMG20250510155907.jpg"><img src="/photos/saison-24-25/IMG20250510155907.jpg" alt=""></a>
+            <a href="/photos/saison-24-25/IMG-20250411-WA0016.jpg"><img src="/photos/saison-24-25/IMG-20250411-WA0016.jpg" alt=""></a>
+            <a href="/photos/saison-24-25/IMG-20250221-WA0030.jpg"><img src="/photos/saison-24-25/IMG-20250221-WA0030.jpg" alt=""></a>
+            <a href="/photos/saison-24-25/IMG-20250409-WA0009.jpg"><img src="/photos/saison-24-25/IMG-20250409-WA0009.jpg" alt=""></a>
+            <a href="/photos/saison-24-25/IMG-20250221-WA0038.jpg"><img src="/photos/saison-24-25/IMG-20250221-WA0038.jpg" alt=""></a>
+            <a href="/photos/saison-24-25/IMG-20250221-WA0023.jpg"><img src="/photos/saison-24-25/IMG-20250221-WA0023.jpg" alt=""></a>
+            <a href="/photos/saison-24-25/IMG-20250221-WA0016.jpg"><img src="/photos/saison-24-25/IMG-20250221-WA0016.jpg" alt=""></a>
+            <a href="/photos/saison-24-25/IMG-20241031-WA0011.jpg"><img src="/photos/saison-24-25/IMG-20241031-WA0011.jpg" alt=""></a>
+            <a href="/photos/saison-24-25/IMG-20241031-WA0006.jpg"><img src="/photos/saison-24-25/IMG-20241031-WA0006.jpg" alt=""></a>
+            <a href="/photos/saison-24-25/IMG-20241031-WA0007.jpg"><img src="/photos/saison-24-25/IMG-20241031-WA0007.jpg" alt=""></a>
+        </div>
+</section>
+
+<hr class="separator">
+
+<section class="archives-section">
+    <h2>Archives</h2>
+        <select id="season-select">
+            <option value="" disabled selected>Faites votre sélection</option>
+            <option value="2024">2024-2025</option>
+            <option value="2023">2023-2024</option>
+            <option value="events">Évènements</option>
+        </select>
+    <div id="archive-gallery">
+    <!-- Chargement dynamique via JS ou redirection -->
     </div>
+</section>
 
-    <div id="footer"></div>
+<hr class="separator">
 
-    <script src="/js/main.js"></script>
-    <script>
-        loadHTML('/commun/menu.html', 'menu');
-        loadHTML('/commun/footer.html', 'footer');
+<h2>Envoyez-nous vos photos</h2>
+<section class="form-section">
+    <form action="/php/galerie2.php" method="post" enctype="multipart/form-data">
+    <label>Prénom et NOM :
+        <input type="text" name="name" required>
+    </label>
+    <label>Email :
+        <input type="email" name="email" required>
+    </label>
+    <label>Catégorie :
+        <select name="category" required>
+        <option value="" disabled selected>Choisissez la catégorie</option>
+        <option value="Baby">Baby, M7, M9</option>
+        <option value="M11">M11</option>
+        <option value="M13">M13</option>
+        <option value="M15">M15</option>
+        <option value="M18">M18</option>
+        <option value="M21">M21</option>
+        <option value="Senior">Sénior</option>
+        </select>
+    </label>
+    <label>Photo :
+        <input type="file" name="photos[]" accept="image/*" multiple required>
+    </label>
+    <label>Légende (optionnel) :
+        <textarea name="caption"></textarea>
+    </label>
+    <button type="submit">Envoyer</button>
+    </form>
+</section>
 
-        let currentIndex = 0;
+<div id="footer"></div>
 
-        function showSlide(index) {
-            const slides = document.querySelectorAll('.carousel-item');
-            if (index >= slides.length) {
-                currentIndex = 0;
-            } else if (index < 0) {
-                currentIndex = slides.length - 1;
-            } else {
-                currentIndex = index;
-            }
-            for (let slide of slides) {
-                slide.style.display = 'none';
-            }
-            slides[currentIndex].style.display = 'block';
-        }
+<script>
+    loadHTML('/commun/menu.html', 'menu');
+    loadHTML('/commun/footer.html', 'footer');
+</script>
 
-        function nextSlide() {
-            showSlide(currentIndex + 1);
-        }
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js "></script>
+<script src="/js/main.js"></script>
+<script src="/js/galerie.js"></script>
 
-        function prevSlide() {
-            showSlide(currentIndex - 1);
-        }
+<!-- Initialisation du carrousel -->
+<script>
+    const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    autoplay: { delay: 3000 },
+    pagination: { el: '.swiper-pagination' },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+    });
+</script>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            showSlide(currentIndex);
-        });
-
-        document.getElementById('photo-upload').addEventListener('change', function () {
-            const thumbnailsDiv = document.getElementById('thumbnails');
-            thumbnailsDiv.innerHTML = ""; // Vide le conteneur de miniatures existant
-
-            const fileList = this.files;
-            if (fileList.length > 0) {
-                for (const file of fileList) {
-                    const reader = new FileReader();
-                
-                    reader.onload = function (e) {
-                        const img = document.createElement('img');
-                        img.src = e.target.result;
-                        img.classList.add('thumbnail');
-                        thumbnailsDiv.appendChild(img);
-                    };
-                
-                    reader.readAsDataURL(file); // Lit le fichier et affiche son contenu
-                }
-            }
-        });
-
-        document.getElementById('photo-form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Empêche le rechargement de la page
-
-            const formData = new FormData(this);
-
-            // Envoyer la requête POST avec fetch
-            fetch('/php/send_mail_galerie.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erreur réseau lors de l\'envoi de l\'email');
-                }
-                return response.text();
-            })
-            .then(data => {
-                // Si la réponse est correcte, affiche un message d'alerte
-                alert('Votre email a été envoyé avec succès !');
-            })
-            .catch(error => {
-                // Si une erreur survient, affiche un message d'erreur
-                alert('Une erreur est survenue lors de l\'envoi de votre email.');
-                console.error('Erreur:', error);
-            });
-        });
-
-    </script>
 </body>
 </html>
