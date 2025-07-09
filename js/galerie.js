@@ -1,35 +1,19 @@
 document.getElementById('season-select').addEventListener('change', function () {
-    const season = this.value;
-    const gallery = document.getElementById('archive-gallery');
-    gallery.innerHTML = '';
+    const selected = this.value;
 
-    // Exemple d’images par saison
-    const archives = {
-        '2024': [
-            'photos/saison-24-25/20241218_175606.jpg',
-            'photos/saison-24-25/20241218_181119.jpg'
-        ],
-        '2023': [
-            '/photos/saison-23-24/thumb1.jpg',
-            '/photos/saison-23-24/thumb2.jpg'
-        ],
-        'events': [
-            '/photos/evenements/thumb1.jpg',
-            '/photos/evenements/thumb2.jpg'
-        ]
-    };
-
-    if (archives[season]) {
-        archives[season].forEach(imgSrc => {
-            const link = document.createElement('a');
-            link.setAttribute('href', imgSrc); // Tu peux remplacer par lightbox ou lien vers une page
-            link.setAttribute('data-lightbox', 'archive');
-            link.innerHTML = `<img src="${imgSrc}" alt="Photo archive">`;
-            gallery.appendChild(link);
-        });
+    if (selected === '2024') {
+        window.location.href = '/pages/galerie/galerie24-25.html';
+    } else if (selected === '2023') {
+        window.location.href = '/pages/galerie/galerie23-24.html';
+    } else if (selected === '2025') {
+        window.location.href = '/pages/galerie/galerie25-26.html';
+    } else if (selected === 'events') {
+        window.location.href = '/pages/galerie/galerie-evenement.html';
     }
 });
 
+
+// CARROUSEL
 const swiper = new Swiper('.swiper-container', {
     loop: true,
     pagination: { el: '.swiper-pagination' },
