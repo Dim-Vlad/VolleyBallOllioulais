@@ -12,11 +12,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message = 'Nom: ' . $_POST['lastname'] . "\n" .
             'Prénom: ' . $_POST['firstname'] . "\n" .
             'E-mail: ' . $_POST['mail'] . "\n\n" .
+            'Téléphone: ' . $_POST['phone'] . "\n\n" .
             'Objet: ' . $selected_subject . "\n" .
             'Message: ' . $_POST['subject'];
 
     // Définir les en-têtes de l'email
-    $headers = 'From: webmaster@votresite.com' . "\r\n" .
+    $headers = 'From: webmaster@volleyballollioulais.fr' . "\r\n" .
             'Reply-To: ' . $_POST['mail'] . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
 
