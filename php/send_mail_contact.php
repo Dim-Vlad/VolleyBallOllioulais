@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Composer le corps du message
     $message = 'Nom: ' . $_POST['lastname'] . "\n" .
             'Prénom: ' . $_POST['firstname'] . "\n" .
-            'E-mail: ' . $_POST['mail'] . "\n\n" .
             'Téléphone: ' . $_POST['phone'] . "\n\n" .
+            'E-mail: ' . $_POST['mail'] . "\n\n" .
             'Objet: ' . $selected_subject . "\n" .
             'Message: ' . $_POST['subject'];
 
