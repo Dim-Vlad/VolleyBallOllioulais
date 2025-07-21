@@ -4,44 +4,77 @@
     align-items: flex-start;
     width: 90%;
     margin: 20px auto;
-    font-family: Poppins, sans-serif;
 }
 .training-table-container {
     width: 100%;
     overflow-x: auto;
     margin: 0 auto;
+    border: 2px solid var(--bg-dark);
 }
+
+
 .training-table {
-    border: 2px solid black;
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px;
+    width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    table-layout: fixed;
 }
-.training-table th, .training-table td {
-    border: 1px solid;
-    padding: 8px;
+
+.training-table th,
+.training-table td {
+    border: 1px solid var(--bg-dark);
+    padding: 5px;
     text-align: center;
-    font-size: 14px;
+    vertical-align: middle;
+    white-space: pre-line;
 }
-.training-table th {
-    background-color: #c9c9c9;
-    font-weight: bold;
-}
-.training-table tr:nth-child(even) { 
-    background-color: #f9f9f9;
-}
-.training-table tr:hover td:not(.no-hover) {
+
+.training-table thead th {
     background-color: var(--primary-color);
-}
-.training-table tr:hover .day {
-    color: var(--bg-dark);
-}
-.training-table .day {
     font-weight: bold;
 }
-/* Formulaire connaitre catégorie */
+
+.day {
+    background-color: var(--primary-color);
+    font-weight: bold;
+    width: 100px;
+}
+
+.day-separator {
+    height: 2px;
+}
+
+.bg-lundi,
+.bg-mercredi,
+.bg-vendredi {
+    background-color: #e3eae1;
+}
+
+.bg-mardi,
+.bg-jeudi {
+    background-color: whitesmoke;
+}
+
+.print-button-container {
+    text-align: left;
+    margin: 0 0 20px 80px;
+}
+
+.print-button {
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.print-button:hover {
+    background-color: var(--bg-dark);
+}
+
+/* Formulaire */
 .form-container {
     width: 35%;
     max-width: 400px;
@@ -61,7 +94,8 @@
     margin-bottom: 10px;
     font-weight: bold;
 }
-.form-container input, .form-container select {
+.form-container input, 
+.form-container select {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -78,6 +112,7 @@
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 .form-container button:hover {
     background-color: var(--bg-dark);
@@ -96,18 +131,16 @@
     font-size: 1rem;
     cursor: pointer;
 }
-
 .complet {
     color: #b90000;
     font-size: 0.9rem;
     background-color: var(--primary-color);
-    border: 2px black solid;
+    border: 2px var(--bg-dark) solid;
     border-radius: 20px;
-    margin: 0 70px 0 70px;
+    margin: 0 70px 20px 70px;
     padding: 5px 10px 5px 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
-
 .contact {
     color: #b90000;
 }
@@ -116,37 +149,62 @@
 }
 
 
-@media (max-width: 850px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .training-table {
-        width: 100%;
-        margin: 10px 0;
-    }
-    .form-container {
-        width: 95%;
-        order: -1;
-    }
-}
 
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .training-table {
-        width: 100%;
-        margin: 10px 0;
-        zoom: 80%;
-    }
-    .form-container {
-        width: 95%;
-        order: -1;
-    }
-    .complet {
-        font-size: 0.7rem;
-        margin: 0 5px 0 5px;
-    }
+.container {
+    flex-direction: column;
+    align-items: center;
+}
+.training-table {
+    width: 100%;
+    zoom: 90%;
+    font-size: 0.8rem;
+}
+.form-container {
+    width: 95%;
+    order: -1;
+}
+.complet {
+    font-size: 0.7rem;
+    margin: 0 5px 20px 5px;
+}
+}
+
+
+@media print {
+.print-button-container,
+body > :not(.container) {
+display: none !important;
+}
+.no-print {
+    display: none !important;
+}
+.container {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    background: white;
+    width: 100%;
+}
+.training-table-container {
+    overflow: visible;
+}
+.training-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+table.training-table td,
+table.training-table th {
+    page-break-inside: avoid;
+    border: 1px solid #000;
+    color: black;
+    background: white;
+}
+thead {
+    display: table-header-group;
+}
+tfoot {
+    display: table-footer-group;
+}
 }
