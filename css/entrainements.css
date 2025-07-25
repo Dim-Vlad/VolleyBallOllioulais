@@ -131,9 +131,9 @@
     font-size: 1rem;
     cursor: pointer;
 }
+
 .complet {
     color: #b90000;
-    font-size: 0.9rem;
     background-color: var(--primary-color);
     border: 2px var(--bg-dark) solid;
     border-radius: 20px;
@@ -141,12 +141,23 @@
     padding: 5px 10px 5px 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
-.contact {
-    color: #b90000;
+.complet h2 {
+    margin: 0;
+    font-size: 2rem;
+    text-decoration: underline;
+}
+.complet p {
+    margin: 10px 0;
+    font-size: 1.2rem;
 }
 .complet a:hover {
     cursor: url('/images/volley-cursor32.png'), auto;
 }
+
+.contact {
+    color: #b90000;
+}
+
 
 
 
