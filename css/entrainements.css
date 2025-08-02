@@ -140,6 +140,7 @@
     margin: 0 70px 20px 70px;
     padding: 5px 10px 5px 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    cursor: default;
 }
 .complet h2 {
     margin: 0;
@@ -150,8 +151,12 @@
     margin: 10px 0;
     font-size: 1.2rem;
 }
+.complet a {
+    text-decoration: underline;
+    font-weight: bold;    
+}
 .complet a:hover {
-    cursor: url('/images/volley-cursor32.png'), auto;
+    cursor: url('/images/icones/volley-cursor32.png'), auto;
 }
 
 .contact {
